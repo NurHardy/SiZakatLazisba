@@ -8,43 +8,88 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--
+         The following two permissions are not required to use
+	     Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name=".LazisbaHome" android:label="@string/title_activity_lazisba_home" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-             <intent-filter>
+        <activity
+            android:name=".LazisbaHome"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity><activity android:name=".AccountSetting" android:label="@string/title_activity_account_setting" android:parentActivityName=".LazisbaHome" android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.lazisba.sizakat.LazisbaHome" />
-        </activity><activity android:name=".MainActivity" android:icon="@drawable/applogotrans_small" android:label="@string/app_name" android:logo="@drawable/applogotrans_small" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.lazisba.sizakat.LoginActivity" />
-        </activity><activity
-            android:name=".LoginActivity"
+        </activity>
+        <activity
+            android:name=".AccountSetting"
+            android:label="@string/title_activity_account_setting"
+            android:parentActivityName=".LazisbaHome"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.lazisba.sizakat.LazisbaHome" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:icon="@drawable/applogotrans_small"
             android:label="@string/app_name"
+            android:logo="@drawable/applogotrans_small"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.lazisba.sizakat.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-           
         </activity>
-        
         <activity
             android:name=".DetilAnakBUS"
             android:icon="@drawable/applogotrans_small"
             android:label="@string/title_activity_detil_anak_bus"
-            android:logo="@drawable/applogotrans_small"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.lazisba.sizakat.MainActivity" />
         </activity>
-        
-        
+
+        <service android:name=".RssService" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC70bsShzDsvhKiJPAjzxJHev0BHn93U6c" />
+
+        <activity
+            android:name=".CompanyMap"
+            android:label="@string/title_activity_company_name"
+            android:parentActivityName=".LazisbaHome"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.lazisba.sizakat.LazisbaHome" />
+        </activity>
+        <activity
+            android:name=".KalkulatorZakat"
+            android:label="@string/title_activity_kalkulator_zakat" android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar">
+        </activity>
     </application>
 
 </manifest>

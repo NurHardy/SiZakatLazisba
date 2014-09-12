@@ -13,8 +13,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text="@string/hello_world"
+        android:text="@string/app_str_menusizakat"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/sizakat_kalkzakat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_dimen_padding"
+        android:text="@string/app_str_kalkzakat" />
+
+    <Button
+        android:id="@+id/sizakat_daftarbus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_dimen_padding"
+        android:text="@string/app_str_listbus" />
 
 </LinearLayout>

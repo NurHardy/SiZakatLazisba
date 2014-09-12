@@ -55,7 +55,7 @@
                 android:src="@drawable/applogotrans" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/frag_txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

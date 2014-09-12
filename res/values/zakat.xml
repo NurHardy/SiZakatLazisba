@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_zakat_lbl_hrgemas">Z. Harga emas murni:</string>
+    <string name="app_zakat_lbl_besarnisab">Besarnya Nisab (z x 85 gram emas)</string>
+    <string name="app_zakat_txt_harta1tahun">Zakat Harta yang Tersimpan selama Satu Tahun</string>
+    <string name="app_zakat_lbl_item_a">A. Uang Tunai, Tabungan, Deposito atau sejenisnya:</string>
+    <string name="app_zakat_lbl_item_b">B. Saham atau surat-surat berharga lainnya:</string>
+    <string name="app_zakat_lbl_item_c">C. Real Estate (tidak termasuk rumah tinggal yang dipakai sekarang):</string>
+    <string name="app_zakat_lbl_item_d">D. Emas, Perak, Permata atau sejenisnya:</string>
+    <string name="app_zakat_lbl_item_e">E. Mobil (lebih dari keperluan pekerjaan anggota keluarga):</string>
+    <string name="app_zakat_lbl_item_f">F. Jumlah Harta Simpanan (A+B+C+D+E):</string>
+    <string name="app_zakat_lbl_item_g">G. Hutang Pribadi yg jatuh tempo dalam tahun ini:</string>
+    <string name="app_zakat_lbl_item_h">H. Harta simpanan kena zakat(F-G, jika > nisab):</string>
+    <string name="app_zakat_lbl_item_i">JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x H):</string>
+    <string name="app_zakat_hitungzakat1thn">Hitung Zakat</string>
+    <string name="app_zakat_int_goldinit">450000</string>
+    
+    
+    
+     
+</resources>

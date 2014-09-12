@@ -67,7 +67,7 @@
             android:paddingBottom="15dp" >
 
             <TextView
-                android:id="@+id/lblTitlePenerimaan"
+                android:id="@+id/lblTitlePenerimaan1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="3"
@@ -124,7 +124,7 @@
         </TableRow>
 
         <TableRow
-            android:id="@+id/tableRow4"
+            android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp" >
@@ -148,7 +148,7 @@
         </TableRow>
 
         <TableRow
-            android:id="@+id/tableRow5"
+            android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#D8FFB2"
@@ -164,7 +164,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtPengeluaran"
+                android:id="@+id/txtPengeluaran1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

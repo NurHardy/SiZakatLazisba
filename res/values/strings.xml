@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SiZakat Lazisba</string>
+    <string name="app_name" translatable="false">SiZakat Lazisba</string>
     <string name="menu_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="username">UserName</string>
@@ -26,5 +26,16 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_company_name">Peta Lokasi Lazisba</string>
+    <string name="app_str_companyaddr">Jl. Pandanaran 126, Simpang Lima, Semarang</string>
+    <string name="app_str_viewmap">Lihat Peta</string>
+    <string name="title_activity_kalkulator_zakat">Kalkulator Zakat</string>
+    <string name="app_str_perh_nisab">Perhitungan Nisab</string>
+    <string name="app_str_numbnul_rp">Rp. 0</string>
+    <string name="app_str_null">-</string>
+    <string name="app_str_updategold">Update Harga Emas</string>
+    <string name="app_str_kalkzakat">Kalkulator Zakat</string>
+    <string name="app_str_menusizakat">Menu Sistem Informasi Zakat</string>
+    <string name="app_str_listbus">Daftar Peserta BUS</string>
 
 </resources>

@@ -7,15 +7,28 @@ import java.util.Locale;
 import org.lazisba.sizakat.MainActivity.MenuFragment;
 import org.lazisba.sizakat.adapters.CustomListViewAdapter;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,8 +36,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class LazisbaHome extends ActionBarActivity implements
@@ -129,17 +144,23 @@ public class LazisbaHome extends ActionBarActivity implements
 	 * one of the sections/tabs/pages.
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
+	    
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
-
+	 
 		@Override
 		public Fragment getItem(int position) {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
-			return PlaceholderFragment.newInstance(position + 1);
+			
+			if (position == 1) {
+				Log.d(getPackageName(), "Position = 1!");
+				RssFragment fragment = new RssFragment();
+                return fragment;
+			} else return PlaceholderFragment.newInstance(position + 1);
+			//return PlaceholderFragment.newInstance(position + 1);
 		}
 
 		@Override
@@ -194,15 +215,16 @@ public class LazisbaHome extends ActionBarActivity implements
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView;
+			View rootView = null;
+			
             int i = getArguments().getInt(ARG_SECTION_NUMBER);
             if (i == 1) {
             	rootView = inflater.inflate(R.layout.fragment_home, container, false);
             } else if (i==3) {
             	rootView = inflater.inflate(R.layout.fragment_laporankeuangan, container, false);
             } else if (i==2) {
-            	rootView = inflater.inflate(R.layout.fragment_daftaranakbus, container, false);
-            	
+            	rootView = inflater.inflate(R.layout.fragment_news, container, false);
+            	/*
             	ListView listView;
                 List<RowItem> rowItems;
                 
@@ -212,15 +234,43 @@ public class LazisbaHome extends ActionBarActivity implements
                     rowItems.add(item);
                 //}
                 
-                listView = (ListView) rootView.findViewById(R.id.daftarAnakBUS);
+                listView = (ListView) rootView.findViewById(R.id.frg_news_listv);
                 CustomListViewAdapter adapter = new CustomListViewAdapter(this.getActivity(),
                         R.layout.listitem_anakbus, rowItems);
                 listView.setAdapter(adapter);
                 listView.setOnItemClickListener(new BUSONItemClickListener());
-                
-			} else {
+                */
+            } else if (i==5) {
+            	rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+            	final Button button = (Button) rootView.findViewById(R.id.frag_profile_viewmap);
+                button.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                    	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), CompanyMap.class);
+        				startActivity(intent);
+                    }
+                });
+
+            } else if (i==4) {
             	rootView = inflater.inflate(R.layout.fragment_activity, container, false);
-            	((TextView) rootView.findViewById(R.id.fragment_label)).setText("Menu #"+i+" aktif!");
+            	//((TextView) rootView.findViewById(R.id.fragment_label)).setText("Menu #"+i+" aktif!");
+            	final Button buttonKalk = (Button) rootView.findViewById(R.id.sizakat_kalkzakat);
+            	buttonKalk.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                    	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), KalkulatorZakat.class);
+        				startActivity(intent);
+                    }
+                });
+            	final Button buttonListBus = (Button) rootView.findViewById(R.id.sizakat_daftarbus);
+            	buttonListBus.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                    	Context context = getActivity().getApplicationContext();
+                    	CharSequence text = "Hello toast!";
+                    	int duration = Toast.LENGTH_SHORT;
+
+                    	Toast toast = Toast.makeText(context, text, duration);
+                    	toast.show();
+                    }
+                });
             }
             
             return rootView;
