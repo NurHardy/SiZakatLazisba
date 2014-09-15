@@ -41,7 +41,7 @@
             android:padding="5dp" >
 
             <TextView
-                android:id="@+id/lblKas"
+                android:id="@+id/frag_home_viewkas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

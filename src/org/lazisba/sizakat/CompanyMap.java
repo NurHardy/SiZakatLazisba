@@ -33,7 +33,7 @@ public class CompanyMap extends ActionBarActivity {
 
         map.addMarker(new MarkerOptions()
                 .title("Masjid Raya Baiturrahman")
-                .snippet("Menara Lantai 2 Masjid Baiturrahman\nJl. Pandanaran 126 Simpang Lima, Semarang")
+                .snippet("Menara Lantai 2 Masjid Baiturrahman, Jl. Pandanaran 126 Simpang Lima, Semarang")
                 .position(lazisbaSemarang));
 	}
 

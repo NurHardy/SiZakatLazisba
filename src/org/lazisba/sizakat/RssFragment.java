@@ -2,18 +2,22 @@ package org.lazisba.sizakat;
 
 import java.util.List;
 
+import org.lazisba.sizakat.LazisbaHome.PlaceholderFragment;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -22,6 +26,7 @@ public class RssFragment extends Fragment implements OnItemClickListener {
 	 
     private ProgressBar progressBar;
     private ListView listView;
+    private ViewGroup noConnLayout;
     private View view;
  
     @Override
@@ -37,7 +42,18 @@ public class RssFragment extends Fragment implements OnItemClickListener {
             view = inflater.inflate(R.layout.fragment_news, container, false);
             progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
             listView = (ListView) view.findViewById(R.id.frg_news_listv);
+            noConnLayout = (ViewGroup) view.findViewById(R.id.frg_news_noconn_cnt);
             listView.setOnItemClickListener(this);
+            
+            final Button button = (Button) view.findViewById(R.id.frg_news_tryagain);
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                	noConnLayout.setVisibility(View.GONE);
+                	progressBar.setVisibility(View.VISIBLE);
+                	startService();
+                }
+            });
+            
             startService();
         } else {
             // If we are returning from a configuration change:
@@ -65,6 +81,7 @@ public class RssFragment extends Fragment implements OnItemClickListener {
             } else {
                 Toast.makeText(getActivity(), "An error occured while downloading the rss feed.",
                         Toast.LENGTH_LONG).show();
+                noConnLayout.setVisibility(View.VISIBLE);
             }
             progressBar.setVisibility(View.GONE);
             listView.setVisibility(View.VISIBLE);

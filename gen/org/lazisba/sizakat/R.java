@@ -1476,12 +1476,10 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f020079;
         public static final int powered_by_google_dark=0x7f02007a;
         public static final int powered_by_google_light=0x7f02007b;
-        public static final int tab_ico_home=0x7f02007c;
+        public static final int siz_button_style=0x7f02007c;
+        public static final int tab_ico_home=0x7f02007d;
     }
     public static final class id {
-        public static final int TextView01=0x7f09008a;
-        public static final int TextView02=0x7f09008d;
-        public static final int TextView03=0x7f09008c;
         public static final int act_kalkzakat_scrvw=0x7f090055;
         public static final int action_bar=0x7f09002e;
         public static final int action_bar_activity_content=0x7f090027;
@@ -1494,13 +1492,12 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f090028;
         public static final int action_menu_presenter=0x7f090029;
         public static final int action_mode_close_button=0x7f090036;
-        public static final int action_settings=0x7f0900aa;
+        public static final int action_settings=0x7f0900ab;
         public static final int activity_chooser_view_content=0x7f090037;
         public static final int always=0x7f09001e;
         public static final int beginning=0x7f090023;
         public static final int book_now=0x7f090010;
         public static final int btnCariBUS=0x7f090087;
-        public static final int button1=0x7f09006e;
         public static final int buyButton=0x7f09000a;
         public static final int buy_now=0x7f09000f;
         public static final int buy_with_google=0x7f09000e;
@@ -1519,13 +1516,18 @@ containing a value of this type.
         public static final int end=0x7f090025;
         public static final int expand_activities_button=0x7f090038;
         public static final int expanded_menu=0x7f09003e;
-        public static final int frag_profile_cont=0x7f0900a3;
-        public static final int frag_profile_viewmap=0x7f0900a5;
-        public static final int frag_txt_companyaddr=0x7f0900a4;
+        public static final int frag_home_kalkzakat=0x7f09008b;
+        public static final int frag_home_usertrans=0x7f09008c;
+        public static final int frag_home_viewkas=0x7f09008a;
+        public static final int frag_profile_cont=0x7f0900a4;
+        public static final int frag_profile_viewmap=0x7f0900a6;
+        public static final int frag_txt_companyaddr=0x7f0900a5;
         public static final int frag_txt_title=0x7f090076;
         public static final int fragment_label=0x7f090082;
         public static final int fragment_menu=0x7f090081;
-        public static final int frg_news_listv=0x7f0900a1;
+        public static final int frg_news_listv=0x7f0900a0;
+        public static final int frg_news_noconn_cnt=0x7f0900a2;
+        public static final int frg_news_tryagain=0x7f09006e;
         public static final int grayscale=0x7f090012;
         public static final int holo_dark=0x7f090005;
         public static final int holo_light=0x7f090006;
@@ -1538,16 +1540,15 @@ containing a value of this type.
         public static final int imageView1=0x7f090051;
         public static final int imageView2=0x7f090089;
         public static final int imgViewFoto=0x7f090075;
-        public static final int laporanKeuanganScroll=0x7f09008e;
+        public static final int laporanKeuanganScroll=0x7f09008d;
         public static final int layoutSearchBUS=0x7f090086;
         public static final int lblAppVer=0x7f090052;
-        public static final int lblKas=0x7f09008b;
-        public static final int lblTitlePenerimaan=0x7f090090;
-        public static final int lblTitlePenerimaan1=0x7f090094;
-        public static final int lblTitlePengeluaran=0x7f090099;
-        public static final int lblTotalPenerimaan=0x7f090096;
-        public static final int lblTotalPengeluaran=0x7f09009b;
-        public static final int lblTotalSaldo=0x7f09009e;
+        public static final int lblTitlePenerimaan=0x7f09008f;
+        public static final int lblTitlePenerimaan1=0x7f090093;
+        public static final int lblTitlePengeluaran=0x7f090098;
+        public static final int lblTotalPenerimaan=0x7f090095;
+        public static final int lblTotalPengeluaran=0x7f09009a;
+        public static final int lblTotalSaldo=0x7f09009d;
         public static final int lblUserName=0x7f09007e;
         public static final int left_drawer=0x7f09007d;
         public static final int left_menu=0x7f09007f;
@@ -1560,8 +1561,8 @@ containing a value of this type.
         public static final int login_status=0x7f090072;
         public static final int login_status_message=0x7f090073;
         public static final int match_parent=0x7f09000c;
-        public static final int menu_forgot_password=0x7f0900a9;
-        public static final int menu_settings=0x7f0900a8;
+        public static final int menu_forgot_password=0x7f0900aa;
+        public static final int menu_settings=0x7f0900a9;
         public static final int middle=0x7f090024;
         public static final int monochrome=0x7f090013;
         public static final int never=0x7f09001c;
@@ -1571,7 +1572,7 @@ containing a value of this type.
         public static final int password=0x7f090078;
         public static final int production=0x7f090007;
         public static final int profile_map=0x7f09004e;
-        public static final int progressBar=0x7f0900a2;
+        public static final int progressBar=0x7f0900a1;
         public static final int progress_circular=0x7f09002a;
         public static final int progress_horizontal=0x7f09002b;
         public static final int radio=0x7f090041;
@@ -1588,7 +1589,7 @@ containing a value of this type.
         public static final int search_plate=0x7f090048;
         public static final int search_src_text=0x7f090049;
         public static final int search_voice_btn=0x7f09004d;
-        public static final int section_label=0x7f0900a0;
+        public static final int section_label=0x7f09009f;
         public static final int selectionDetails=0x7f09000b;
         public static final int shortcut=0x7f090040;
         public static final int showCustom=0x7f09001a;
@@ -1601,24 +1602,25 @@ containing a value of this type.
         public static final int strict_sandbox=0x7f090009;
         public static final int submit_area=0x7f09004b;
         public static final int tabMode=0x7f090015;
-        public static final int tableRow0=0x7f09008f;
-        public static final int tableRow1=0x7f090091;
-        public static final int tableRow2=0x7f090093;
-        public static final int tableRow3=0x7f090095;
-        public static final int tableRow4=0x7f090098;
-        public static final int tableRow5=0x7f09009a;
-        public static final int tableRow6=0x7f09009d;
+        public static final int tableRow0=0x7f09008e;
+        public static final int tableRow1=0x7f090090;
+        public static final int tableRow2=0x7f090092;
+        public static final int tableRow3=0x7f090094;
+        public static final int tableRow4=0x7f090097;
+        public static final int tableRow5=0x7f090099;
+        public static final int tableRow6=0x7f09009c;
         public static final int terrain=0x7f090003;
         public static final int textView=0x7f090080;
+        public static final int textView1=0x7f0900a3;
         public static final int textView4=0x7f090053;
         public static final int title=0x7f09003d;
         public static final int top_action_bar=0x7f090032;
-        public static final int txtKas=0x7f090092;
-        public static final int txtPenerimaan=0x7f090097;
-        public static final int txtPengeluaran=0x7f09009c;
-        public static final int txtPengeluaran1=0x7f09009f;
-        public static final int txtViewJudul=0x7f0900a6;
-        public static final int txtViewSubJudul=0x7f0900a7;
+        public static final int txtKas=0x7f090091;
+        public static final int txtPenerimaan=0x7f090096;
+        public static final int txtPengeluaran=0x7f09009b;
+        public static final int txtPengeluaran1=0x7f09009e;
+        public static final int txtViewJudul=0x7f0900a7;
+        public static final int txtViewSubJudul=0x7f0900a8;
         public static final int up=0x7f090033;
         public static final int useLogo=0x7f090016;
         public static final int withText=0x7f09001f;
@@ -1768,8 +1770,8 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f080025;
         public static final int action_settings=0x7f08003f;
-        public static final int action_sign_in_register=0x7f08005d;
-        public static final int action_sign_in_short=0x7f08005e;
+        public static final int action_sign_in_register=0x7f08005f;
+        public static final int action_sign_in_short=0x7f080060;
         public static final int app_label_nama=0x7f080035;
         public static final int app_lbl_prestasi=0x7f080038;
         public static final int app_lbl_ttl=0x7f080037;
@@ -1785,26 +1787,28 @@ containing a value of this type.
         public static final int app_str_kas=0x7f080030;
         public static final int app_str_listbus=0x7f08004a;
         public static final int app_str_menusizakat=0x7f080049;
+        public static final int app_str_noconnection=0x7f08004b;
         public static final int app_str_null=0x7f080046;
         public static final int app_str_numbnul_rp=0x7f080045;
         public static final int app_str_perh_nisab=0x7f080044;
+        public static final int app_str_tryagain=0x7f08004c;
         public static final int app_str_updategold=0x7f080047;
         public static final int app_str_viewmap=0x7f080042;
         public static final int app_version=0x7f08003a;
-        public static final int app_zakat_hitungzakat1thn=0x7f080071;
-        public static final int app_zakat_int_goldinit=0x7f080072;
-        public static final int app_zakat_lbl_besarnisab=0x7f080066;
-        public static final int app_zakat_lbl_hrgemas=0x7f080065;
-        public static final int app_zakat_lbl_item_a=0x7f080068;
-        public static final int app_zakat_lbl_item_b=0x7f080069;
-        public static final int app_zakat_lbl_item_c=0x7f08006a;
-        public static final int app_zakat_lbl_item_d=0x7f08006b;
-        public static final int app_zakat_lbl_item_e=0x7f08006c;
-        public static final int app_zakat_lbl_item_f=0x7f08006d;
-        public static final int app_zakat_lbl_item_g=0x7f08006e;
-        public static final int app_zakat_lbl_item_h=0x7f08006f;
-        public static final int app_zakat_lbl_item_i=0x7f080070;
-        public static final int app_zakat_txt_harta1tahun=0x7f080067;
+        public static final int app_zakat_hitungzakat1thn=0x7f080073;
+        public static final int app_zakat_int_goldinit=0x7f080074;
+        public static final int app_zakat_lbl_besarnisab=0x7f080068;
+        public static final int app_zakat_lbl_hrgemas=0x7f080067;
+        public static final int app_zakat_lbl_item_a=0x7f08006a;
+        public static final int app_zakat_lbl_item_b=0x7f08006b;
+        public static final int app_zakat_lbl_item_c=0x7f08006c;
+        public static final int app_zakat_lbl_item_d=0x7f08006d;
+        public static final int app_zakat_lbl_item_e=0x7f08006e;
+        public static final int app_zakat_lbl_item_f=0x7f08006f;
+        public static final int app_zakat_lbl_item_g=0x7f080070;
+        public static final int app_zakat_lbl_item_h=0x7f080071;
+        public static final int app_zakat_lbl_item_i=0x7f080072;
+        public static final int app_zakat_txt_harta1tahun=0x7f080069;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1896,47 +1900,47 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f080018;
         public static final int drawer_close=0x7f08002e;
         public static final int drawer_open=0x7f08002d;
-        public static final int error_field_required=0x7f080064;
-        public static final int error_incorrect_password=0x7f080063;
-        public static final int error_invalid_email=0x7f080061;
-        public static final int error_invalid_password=0x7f080062;
+        public static final int error_field_required=0x7f080066;
+        public static final int error_incorrect_password=0x7f080065;
+        public static final int error_invalid_email=0x7f080063;
+        public static final int error_invalid_password=0x7f080064;
         public static final int hello_world=0x7f080029;
         public static final int login=0x7f08002c;
-        public static final int login_progress_signing_in=0x7f080060;
-        public static final int menu_forgot_password=0x7f08005f;
+        public static final int login_progress_signing_in=0x7f080062;
+        public static final int menu_forgot_password=0x7f080061;
         public static final int menu_settings=0x7f080028;
         public static final int password=0x7f08002b;
-        public static final int pref_default_display_name=0x7f080050;
-        public static final int pref_description_social_recommendations=0x7f08004e;
+        public static final int pref_default_display_name=0x7f080052;
+        public static final int pref_description_social_recommendations=0x7f080050;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f080052;
+        public static final int pref_header_data_sync=0x7f080054;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f08004c;
+        public static final int pref_header_general=0x7f08004e;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f080055;
-        public static final int pref_ringtone_silent=0x7f080058;
-        public static final int pref_title_add_friends_to_messages=0x7f080051;
-        public static final int pref_title_display_name=0x7f08004f;
-        public static final int pref_title_new_message_notifications=0x7f080056;
-        public static final int pref_title_ringtone=0x7f080057;
-        public static final int pref_title_social_recommendations=0x7f08004d;
-        public static final int pref_title_sync_frequency=0x7f080053;
-        public static final int pref_title_system_sync_settings=0x7f080054;
-        public static final int pref_title_vibrate=0x7f080059;
+        public static final int pref_header_notifications=0x7f080057;
+        public static final int pref_ringtone_silent=0x7f08005a;
+        public static final int pref_title_add_friends_to_messages=0x7f080053;
+        public static final int pref_title_display_name=0x7f080051;
+        public static final int pref_title_new_message_notifications=0x7f080058;
+        public static final int pref_title_ringtone=0x7f080059;
+        public static final int pref_title_social_recommendations=0x7f08004f;
+        public static final int pref_title_sync_frequency=0x7f080055;
+        public static final int pref_title_system_sync_settings=0x7f080056;
+        public static final int pref_title_vibrate=0x7f08005b;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f08005b;
-        public static final int prompt_password=0x7f08005c;
-        public static final int title_activity_account_setting=0x7f08004b;
+        public static final int prompt_email=0x7f08005d;
+        public static final int prompt_password=0x7f08005e;
+        public static final int title_activity_account_setting=0x7f08004d;
         public static final int title_activity_company_name=0x7f080040;
         public static final int title_activity_detil_anak_bus=0x7f080033;
         public static final int title_activity_kalkulator_zakat=0x7f080043;
         public static final int title_activity_lazisba_home=0x7f08003b;
-        public static final int title_activity_login=0x7f08005a;
+        public static final int title_activity_login=0x7f08005c;
         public static final int title_section1=0x7f08003c;
         public static final int title_section2=0x7f08003d;
         public static final int title_section3=0x7f08003e;
@@ -2188,6 +2192,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_ProgressBar=0x7f06000f;
         public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f06000e;
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f060027;
+        public static final int siz_button_text=0x7f060093;
     }
     public static final class xml {
         public static final int pref_data_sync=0x7f050000;

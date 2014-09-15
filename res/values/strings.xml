@@ -37,5 +37,7 @@
     <string name="app_str_kalkzakat">Kalkulator Zakat</string>
     <string name="app_str_menusizakat">Menu Sistem Informasi Zakat</string>
     <string name="app_str_listbus">Daftar Peserta BUS</string>
+    <string name="app_str_noconnection">Tidak ada koneksi</string>
+    <string name="app_str_tryagain">Coba Lagi</string>
 
 </resources>

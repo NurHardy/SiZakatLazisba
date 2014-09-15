@@ -139,6 +139,9 @@ public class LazisbaHome extends ActionBarActivity implements
 			FragmentTransaction fragmentTransaction) {
 	}
 
+	public void jumpToPage(int pageId) {
+		mViewPager.setCurrentItem(pageId);
+	}
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
@@ -220,6 +223,19 @@ public class LazisbaHome extends ActionBarActivity implements
             int i = getArguments().getInt(ARG_SECTION_NUMBER);
             if (i == 1) {
             	rootView = inflater.inflate(R.layout.fragment_home, container, false);
+            	final Button buttonKalkHome = (Button) rootView.findViewById(R.id.frag_home_kalkzakat);
+            	buttonKalkHome.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                    	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), KalkulatorZakat.class);
+        				startActivity(intent);
+                    }
+                });
+            	final Button buttonKas = (Button) rootView.findViewById(R.id.frag_home_viewkas);
+            	buttonKas.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                    	((LazisbaHome)getActivity()).jumpToPage(2);
+                    }
+                });
             } else if (i==3) {
             	rootView = inflater.inflate(R.layout.fragment_laporankeuangan, container, false);
             } else if (i==2) {
@@ -279,16 +295,18 @@ public class LazisbaHome extends ActionBarActivity implements
 			//return rootView;
 		} // end procedure
 		
-		private class BUSONItemClickListener implements OnItemClickListener {
+		/*
+		private class ViewKasListener implements OnItemClickListener {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 		            long id) {
-				Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), DetilAnakBUS.class);
-				startActivity(intent);
+				LazisbaHome.this.mViewPager.setCurrentItem(2);
+				//Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), DetilAnakBUS.class);
+				//startActivity(intent);
 		    }
 			
-		}
+		}*/
 	}
 
 }
