@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--
          The following two permissions are not required to use
-	     Google Maps Android API v2, but are recommended.
+	     Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -88,7 +88,12 @@
         </activity>
         <activity
             android:name=".KalkulatorZakat"
-            android:label="@string/title_activity_kalkulator_zakat" android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar">
+            android:label="@string/title_activity_kalkulator_zakat"
+            android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar" >
+        </activity>
+        <activity
+            android:name=".ListPesertaBus"
+            android:label="@string/title_activity_list_peserta_bus" android:theme="@style/Theme.Base.AppCompat.Light.DarkActionBar">
         </activity>
     </application>
 

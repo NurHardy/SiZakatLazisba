@@ -17,16 +17,27 @@
             android:layout_height="wrap_content"
             android:ems="10" >
 
-            <requestFocus />
+            <!-- <requestFocus /> -->
         </EditText>
 
         <Button
             android:id="@+id/btnCariBUS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/siz_button_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="0.2"
+            android:background="@drawable/siz_button_style"
             android:text="@string/app_str_cari" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/frag_listbus_newbus"
+        style="@style/siz_button_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/siz_button_style"
+        android:text="@string/app_str_newbus" />
 
     <ListView
         android:id="@+id/daftarAnakBUS"

@@ -40,9 +40,9 @@ public class CustomListViewAdapter extends ArrayAdapter<RowItem> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.listitem_anakbus, null);
             holder = new ViewHolder();
-            holder.txtDesc = (TextView) convertView.findViewById(R.id.txtViewSubJudul);
-            holder.txtTitle = (TextView) convertView.findViewById(R.id.txtViewJudul);
-            holder.imageView = (ImageView) convertView.findViewById(R.id.imgViewFoto);
+            holder.txtDesc = (TextView) convertView.findViewById(R.id.txtViewJudul);
+            holder.txtTitle = (TextView) convertView.findViewById(R.id.txtViewSubJudul);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.listitem_news_imgthumb);
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();

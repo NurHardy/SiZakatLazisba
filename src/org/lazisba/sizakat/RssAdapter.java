@@ -37,7 +37,7 @@ public class RssAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.listitem_anakbus, null);
+            convertView = View.inflate(context, R.layout.listitem_berita, null);
             holder = new ViewHolder();
             holder.itemTitle = (TextView) convertView.findViewById(R.id.txtViewJudul);
             holder.itemDate = (TextView) convertView.findViewById(R.id.txtViewSubJudul);

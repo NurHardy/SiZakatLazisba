@@ -39,5 +39,7 @@
     <string name="app_str_listbus">Daftar Peserta BUS</string>
     <string name="app_str_noconnection">Tidak ada koneksi</string>
     <string name="app_str_tryagain">Coba Lagi</string>
+    <string name="title_activity_list_peserta_bus">Daftar Peserta BUS</string>
+    <string name="app_str_newbus">Tambah BUS baru</string>
 
 </resources>
