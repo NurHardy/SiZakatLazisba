@@ -1,38 +1,74 @@
 package org.lazisba.sizakat;
 
+import org.lazisba.sizakat.LazisbaHome.PlaceholderFragment;
+import org.lazisba.sizakat.dialogs.zakat_DlgNisab;
+
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class KalkulatorZakat extends ActionBarActivity {
+public class KalkulatorZakat extends ActionBarActivity implements zakat_DlgNisab.OnCompleteListener {
 
+	private double nisabFinal = .0f;
+	private TextView txtNisab;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_kalkulator_zakat);
 		
-		final EditText txtBoxHargaEmas = (EditText) findViewById(R.id.zakat_txtbox_nisab);
-		final EditText txtBoxBesarNisab = (EditText) findViewById(R.id.zakat_txtbox_nisabfinal);
+		txtNisab = (TextView) findViewById(R.id.zakat_txtNisab);
+		RelativeLayout bNisab = (RelativeLayout) findViewById(R.id.zakat_boxNisab);
+		bNisab.setOnClickListener(new OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+		    	FragmentTransaction ft = KalkulatorZakat.this.getSupportFragmentManager().beginTransaction();
+			    Fragment prev = KalkulatorZakat.this.getSupportFragmentManager().findFragmentByTag("dlgNisab");
+			    if (prev != null) {
+			        ft.remove(prev);
+			    }
+			    ft.addToBackStack(null);
+
+			    // Create and show the dialog.
+			    DialogFragment newFragment = new zakat_DlgNisab();
+			    newFragment.show(ft, "dlgNisab");
+		    }
+		});
 		
-		txtBoxHargaEmas.addTextChangedListener(new TextWatcher() {
-
-          public void afterTextChanged(Editable s) {
-        	  double hargaEmasGram = 0.0f;
-        	  double besarNisab = 0.0f;
-        	  hargaEmasGram = Double.parseDouble(txtBoxHargaEmas.getText().toString());
-        	  
-        	  besarNisab = 85 * hargaEmasGram;
-        	  txtBoxBesarNisab.setText(String.format("Rp. %.2f", besarNisab));
-          }
-
-          public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-          public void onTextChanged(CharSequence s, int start, int before, int count) {}
-       });
+		RelativeLayout bZakatHarta = (RelativeLayout) findViewById(R.id.zakat_boxZakatHarta);
+		bZakatHarta.setOnClickListener(new OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+		    	Intent intent = new Intent(KalkulatorZakat.this, KalkulatorZakatHarta.class);
+				startActivity(intent);
+		    }
+		});
+		
+		RelativeLayout bZakatProfesi = (RelativeLayout) findViewById(R.id.zakat_boxZakatProfesi);
+		bZakatProfesi.setOnClickListener(new OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+		    	Intent intent = new Intent(KalkulatorZakat.this, KalkulatorZakatProfesi.class);
+				startActivity(intent);
+		    }
+		});
+		
+		RelativeLayout bZakatUsaha = (RelativeLayout) findViewById(R.id.zakat_boxZakatUsaha);
+		bZakatUsaha.setOnClickListener(new OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+		    	Intent intent = new Intent(KalkulatorZakat.this, KalkulatorZakatUsaha.class);
+				startActivity(intent);
+		    }
+		});
 	}
 
 	@Override
@@ -52,5 +88,12 @@ public class KalkulatorZakat extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onNisabComplete(double nisab) {
+		// TODO Auto-generated method stub
+		nisabFinal = nisab;
+		txtNisab.setText(String.format("Rp. %.2f", nisabFinal));
 	}
 }

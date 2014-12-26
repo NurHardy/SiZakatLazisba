@@ -7,12 +7,13 @@
 
     <ImageView
         android:id="@+id/listitem_news_imgthumb"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
         android:padding="5dp"
         android:scaleType="fitStart"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/icon_itempost" />
 
     <TextView
         android:id="@+id/txtViewJudul"

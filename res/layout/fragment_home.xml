@@ -2,63 +2,111 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:orientation="vertical" >
+    android:layout_gravity="left"
+    android:background="@color/app_bg_color"
+    android:orientation="vertical"
+    android:padding="10dp" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:background="@color/app_bg_color"
-        android:padding="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/applogotrans" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/baiturrahman_head" />
-
-    <Button
-        android:id="@+id/frag_home_viewkas"
-        style="@style/siz_button_text"
+    <ScrollView
+        android:id="@+id/home_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/siz_button_style"
-        android:padding="10dp"
-        android:text="Laporan Pemasukan dan Pengeluaran"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColorHint="#000" />
+        android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/frag_home_kalkzakat"
-        style="@style/siz_button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/siz_button_style"
-        android:padding="10dp"
-        android:text="Kalkulator Zakat"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColorHint="#000" />
+        <LinearLayout
+            android:id="@+id/home_contentcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/frag_home_usertrans"
-        style="@style/siz_button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/siz_button_style"
-        android:padding="10dp"
-        android:text="Laporan Donasi Akun"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColorHint="#000" />
+            <ImageView
+                android:id="@+id/item_trx_icon"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/siz_shadow_container"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_lazisba" />
+
+            <LinearLayout
+                android:id="@+id/home_bodycontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/siz_shadow_container"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/baiturrahman_head" />
+
+                <TextView
+                    android:id="@+id/home_lblAppDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="SiZakat Mobile adalah media penyebaran informasi Takmir dan Lembaga Amil Zakat Masjid Baiturrahman Semarang"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/home_lblMainMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Menu Utama"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <Button
+                    android:id="@+id/frag_home_viewkas"
+                    style="@style/siz_menu_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/siz_menu_style"
+                    android:drawableLeft="@drawable/icon_report_32"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="Laporan Pemasukan dan Pengeluaran"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColorHint="#000" />
+
+                <Button
+                    android:id="@+id/frag_home_kalkzakat"
+                    style="@style/siz_menu_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/siz_menu_style"
+                    android:drawableLeft="@drawable/icon_calculator_32"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="Kalkulator Zakat"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColorHint="#000" />
+
+                <Button
+                    android:id="@+id/frag_home_usertrans"
+                    style="@style/siz_menu_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/siz_menu_style"
+                    android:drawableLeft="@drawable/icon_info_32"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="Informasi rekening LAZIS Baiturrahman"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColorHint="#000" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -46,7 +46,8 @@ public class RssAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.itemTitle.setText(items.get(position).getTitle());
-        holder.itemDate.setText(items.get(position).getDate());
+        java.text.DateFormat dateFormat = android.text.format.DateFormat.getLongDateFormat(context);
+        holder.itemDate.setText(dateFormat.format(items.get(position).getDate()));
         return convertView;
     }
  

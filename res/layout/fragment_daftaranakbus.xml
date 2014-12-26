@@ -9,17 +9,17 @@
         android:id="@+id/layoutSearchBUS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
+        android:padding="10dp"
+        android:visibility="gone" >
 
         <EditText
             android:id="@+id/zakat_txtbox_nisab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10" >
-
-            <!-- <requestFocus /> -->
         </EditText>
 
+        <!-- <requestFocus /> -->
         <Button
             android:id="@+id/btnCariBUS"
             style="@style/siz_button_text"
@@ -37,7 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/siz_button_style"
-        android:text="@string/app_str_newbus" />
+        android:text="@string/app_str_newbus"
+        android:visibility="gone" />
 
     <ListView
         android:id="@+id/daftarAnakBUS"

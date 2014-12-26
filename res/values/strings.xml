@@ -42,4 +42,35 @@
     <string name="title_activity_list_peserta_bus">Daftar Peserta BUS</string>
     <string name="app_str_newbus">Tambah BUS baru</string>
 
+    <string-array name="app_str_months">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+    <string name="app_splash_developer">Informatika Universitas Diponegoro</string>
+    <string name="title_activity_splash_screen">Lazis Baiturrahman</string>
+    <string name="app_str_loading">Memuat&#8230;</string>
+    <string name="app_str_show">Tampilkan</string>
+    <string name="app_laporankeuangan_filter">Tampilkan Laporan Bulan lain...</string>
+    <string name="app_sizakat_donasiku">Donasiku</string>
+    <string name="app_sizakat_opensiz">Buka SiZakat versi Web</string>
+    <string name="app_profil_rekening">Nomor Rekening</string>
+    <string name="app_str_cancel">Batalkan</string>
+    <string name="title_activity_donasiku">Laporan Donasiku</string>
+    <string name="app_donasiku_title">Laporan Donasiku</string>
+    <string name="app_str_zero">0</string>
+    <string name="title_activity_kalkulator_zakat_profesi">Zakat Profesi</string>
+    <string name="title_activity_kalkulator_zakat_usaha">Kalkulator Zakat Usaha</string>
+    <string name="app_str_100percent">100%</string>
+
 </resources>

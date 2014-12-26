@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KalkulatorZakatHarta" >
+
+    <LinearLayout
+        android:id="@+id/zakat_layout_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context="org.lazisba.sizakat.KalkulatorZakat" >
+
+        <TextView
+            android:id="@+id/zakat_txt_nisab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_color_sectheader"
+            android:drawableLeft="@drawable/icon_gold_32"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:nextFocusLeft="@id/zakat_txt_nisab"
+            android:nextFocusUp="@id/zakat_txt_nisab"
+            android:padding="@dimen/app_dimen_padding"
+            android:text="@string/app_str_perh_nisab"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/zakat_lbl_nisab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/app_dimen_padding"
+            android:paddingTop="@dimen/app_dimen_padding"
+            android:text="@string/app_zakat_lbl_hrgemas"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/zakat_txt_lastupdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_dimen_padding"
+            android:text="@string/app_str_null"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/zakat_txtbox_nisab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/app_dimen_padding"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/app_zakat_int_goldinit" >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/zakat_btn_updategold"
+            style="@style/siz_button_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_dimen_padding"
+            android:layout_marginLeft="@dimen/app_dimen_padding"
+            android:layout_marginRight="@dimen/app_dimen_padding"
+            android:background="@drawable/siz_button_style"
+            android:text="@string/app_str_updategold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/zakat_lbl_nisabfinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_dimen_padding"
+            android:text="@string/app_zakat_lbl_besarnisab"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/zakat_txtbox_nisabfinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/app_str_numbnul_rp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+       
+
+    </LinearLayout>
+
+</ScrollView>

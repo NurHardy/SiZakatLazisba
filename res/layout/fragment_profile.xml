@@ -1,35 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/frag_profile_cont"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profil_wrapper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@color/app_bg_color"
+    android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/frag_txt_title"
+	<ScrollView
+        android:id="@+id/profil_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/app_name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_height="match_parent"
+        android:background="@drawable/siz_shadow_container"
+        android:padding="3dp" >
 
-    <TextView
-        android:id="@+id/frag_txt_companyaddr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/app_str_companyaddr"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:id="@+id/frag_profile_cont"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/frag_profile_viewmap"
-        style="@style/siz_button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_dimen_padding"
-        android:background="@drawable/siz_button_style"
-        android:drawableTop="@drawable/applogotrans_small"
-        android:padding="@dimen/app_dimen_padding"
-        android:text="@string/app_str_viewmap" />
+            <TextView
+                android:id="@+id/frag_txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/app_name"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/frag_txt_companyaddr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/app_str_companyaddr"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/frag_profile_viewmap"
+                style="@style/siz_button_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/app_dimen_padding"
+                android:background="@drawable/siz_button_style"
+                android:padding="@dimen/app_dimen_padding"
+                android:text="@string/app_str_viewmap" />
+
+            <TextView
+                android:id="@+id/profil_txtTitleRegening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/app_profil_rekening"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/profil_txtDescRekening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Silakan salurkan Zakat, Infaq atau Shodaqoh Anda ke kami melalui salah satu rekening berikut:"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/item_trx_icon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/rekening" />
+
+        </LinearLayout>
+	</ScrollView>
+
+</FrameLayout>

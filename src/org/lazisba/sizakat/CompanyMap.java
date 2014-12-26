@@ -28,9 +28,9 @@ public class CompanyMap extends ActionBarActivity {
         LatLng lazisbaSemarang = new LatLng(-6.989448, 110.422135);
 
         Log.d("MapActivity","Map: Update camera");
-        map.setMyLocationEnabled(true);
+        map.setMyLocationEnabled(false);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(lazisbaSemarang, 13));
-
+        
         map.addMarker(new MarkerOptions()
                 .title("Masjid Raya Baiturrahman")
                 .snippet("Menara Lantai 2 Masjid Baiturrahman, Jl. Pandanaran 126 Simpang Lima, Semarang")

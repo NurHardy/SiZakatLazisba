@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color" >
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/siz_shadow_container"
+        android:maxWidth="250dp"
+        android:padding="5dp"
+        android:src="@drawable/logo_lazisba" />
+
+    <LinearLayout
+        android:id="@+id/splash_loadingContent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:background="@drawable/siz_shadow_container"
+        android:gravity="fill_vertical|center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/splash_progressBar"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:id="@+id/splash_txtLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/app_str_loading"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/app_list_highlight"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#fff"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="@string/app_splash_developer"
+        android:textColor="@color/app_list_highlight"
+        android:textSize="16sp" />
+
+</RelativeLayout>

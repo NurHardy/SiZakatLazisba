@@ -12,7 +12,6 @@ import java.util.Locale;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import android.text.format.DateFormat;
 import android.util.Xml;
 
 public class RssParser {
@@ -36,13 +35,19 @@ public class RssParser {
         parser.require(XmlPullParser.START_TAG, null, "rss");
         String title = null;
         String link = null;
-        String tanggal = null;
+        Date tanggal = null;
+        
+        int readLevel = 0;
         List<RssItem> items = new ArrayList<RssItem>();
         while (parser.next() != XmlPullParser.END_DOCUMENT) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
+            
             String name = parser.getName();
+            if (name.equals("item")) {readLevel = 1; continue; }
+            if (readLevel != 1) continue; // bukan tag item
+            
             if (name.equals("title")) {
                 title = readTitle(parser);
             } else if (name.equals("link")) {
@@ -50,11 +55,12 @@ public class RssParser {
             } else if (name.equals("pubDate")) {
             	tanggal = readTanggal(parser);
             }
-            if (title != null && link != null) {
+            if (title != null && link != null && tanggal != null) {
                 RssItem item = new RssItem(title, link, tanggal);
                 items.add(item);
                 title = null;
                 link = null;
+                tanggal = null;
             }
         }
         return items;
@@ -74,22 +80,19 @@ public class RssParser {
         return title;
     }
     
-    private String readTanggal(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private Date readTanggal(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "pubDate");
         String tanggalRSS = readText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "pubDate");
         
-        String tanggalOutput = null;
         SimpleDateFormat formatter = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
         Date date;
 		try {
 			date = formatter.parse(tanggalRSS);
-			tanggalOutput = date.toString();
 		} catch (ParseException e) {
-			tanggalOutput = "- date parsing error -";
+			date = null;
 		}
-        
-        return tanggalOutput;
+        return date;
     }
  
     // For the tags title and link, extract their text values.

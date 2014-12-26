@@ -17,10 +17,11 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
-        public static final int pref_example_list_titles=0x7f0d0000;
-        public static final int pref_example_list_values=0x7f0d0001;
-        public static final int pref_sync_frequency_titles=0x7f0d0002;
-        public static final int pref_sync_frequency_values=0x7f0d0003;
+        public static final int app_str_months=0x7f0d0000;
+        public static final int pref_example_list_titles=0x7f0d0001;
+        public static final int pref_example_list_values=0x7f0d0002;
+        public static final int pref_sync_frequency_titles=0x7f0d0003;
+        public static final int pref_sync_frequency_values=0x7f0d0004;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -703,6 +704,14 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int maskedWalletDetailsTextAppearance=0x7f010019;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarButtonStyle=0x7f01008f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarStyle=0x7f01008e;
         /**  The type of navigation to use. 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -1180,7 +1189,7 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f0b0002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f07001e;
+        public static final int abc_search_url_text_holo=0x7f07001f;
         public static final int abc_search_url_text_normal=0x7f070017;
         public static final int abc_search_url_text_pressed=0x7f070019;
         public static final int abc_search_url_text_selected=0x7f070018;
@@ -1188,6 +1197,7 @@ containing a value of this type.
         public static final int app_color_sectheader=0x7f07001d;
         public static final int app_drawer_color=0x7f07001c;
         public static final int app_list_highlight=0x7f07001b;
+        public static final int black_overlay=0x7f07001e;
         public static final int common_action_bar_splitter=0x7f070009;
         /**  Sign-in Button Colors 
          */
@@ -1200,9 +1210,9 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f070006;
         public static final int common_signin_btn_light_text_focused=0x7f070007;
         public static final int common_signin_btn_light_text_pressed=0x7f070005;
-        public static final int common_signin_btn_text_dark=0x7f07001f;
-        public static final int common_signin_btn_text_light=0x7f070020;
-        public static final int drawerlist_selector=0x7f070021;
+        public static final int common_signin_btn_text_dark=0x7f070020;
+        public static final int common_signin_btn_text_light=0x7f070021;
+        public static final int drawerlist_selector=0x7f070022;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f07000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
@@ -1221,8 +1231,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f070011;
         public static final int wallet_holo_blue_light=0x7f070015;
         public static final int wallet_link_text_light=0x7f070016;
-        public static final int wallet_primary_text_holo_light=0x7f070022;
-        public static final int wallet_secondary_text_holo_dark=0x7f070023;
+        public static final int wallet_primary_text_holo_light=0x7f070023;
+        public static final int wallet_secondary_text_holo_dark=0x7f070024;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1470,18 +1480,41 @@ containing a value of this type.
         public static final int emptyportrait=0x7f020073;
         public static final int ic_drawer=0x7f020074;
         public static final int ic_launcher=0x7f020075;
-        public static final int ic_plusone_medium_off_client=0x7f020076;
-        public static final int ic_plusone_small_off_client=0x7f020077;
-        public static final int ic_plusone_standard_off_client=0x7f020078;
-        public static final int ic_plusone_tall_off_client=0x7f020079;
-        public static final int powered_by_google_dark=0x7f02007a;
-        public static final int powered_by_google_light=0x7f02007b;
-        public static final int siz_button_style=0x7f02007c;
-        public static final int tab_ico_home=0x7f02007d;
+        public static final int ic_launcher_new=0x7f020076;
+        public static final int ic_news=0x7f020077;
+        public static final int ic_plusone_medium_off_client=0x7f020078;
+        public static final int ic_plusone_small_off_client=0x7f020079;
+        public static final int ic_plusone_standard_off_client=0x7f02007a;
+        public static final int ic_plusone_tall_off_client=0x7f02007b;
+        public static final int icon_account_32=0x7f02007c;
+        public static final int icon_calculator_32=0x7f02007d;
+        public static final int icon_check_16=0x7f02007e;
+        public static final int icon_check_32=0x7f02007f;
+        public static final int icon_gold_32=0x7f020080;
+        public static final int icon_info_16=0x7f020081;
+        public static final int icon_info_32=0x7f020082;
+        public static final int icon_itempost=0x7f020083;
+        public static final int icon_lock=0x7f020084;
+        public static final int icon_report_32=0x7f020085;
+        public static final int icon_warn_16=0x7f020086;
+        public static final int icon_warn_32=0x7f020087;
+        public static final int icon_wrong_16=0x7f020088;
+        public static final int icon_wrong_32=0x7f020089;
+        public static final int logo_lazisba=0x7f02008a;
+        public static final int powered_by_google_dark=0x7f02008b;
+        public static final int powered_by_google_light=0x7f02008c;
+        public static final int rekening=0x7f02008d;
+        public static final int siz_button_style=0x7f02008e;
+        public static final int siz_menu_style=0x7f02008f;
+        public static final int siz_shadow_container=0x7f020090;
+        public static final int tab_ico_about=0x7f020091;
+        public static final int tab_ico_home=0x7f020092;
+        public static final int tab_ico_report=0x7f020093;
+        public static final int tab_ico_sizakat=0x7f020094;
     }
     public static final class id {
-        public static final int act_kalkzakat_scrvw=0x7f090055;
-        public static final int act_listbus_container=0x7f090072;
+        public static final int act_detil_addbus=0x7f090055;
+        public static final int act_listbus_container=0x7f090077;
         public static final int action_bar=0x7f09002e;
         public static final int action_bar_activity_content=0x7f090027;
         public static final int action_bar_container=0x7f09002d;
@@ -1493,88 +1526,122 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f090028;
         public static final int action_menu_presenter=0x7f090029;
         public static final int action_mode_close_button=0x7f090036;
-        public static final int action_settings=0x7f0900ad;
+        public static final int action_settings=0x7f090118;
         public static final int activity_chooser_view_content=0x7f090037;
         public static final int always=0x7f09001e;
         public static final int beginning=0x7f090023;
         public static final int book_now=0x7f090010;
-        public static final int btnCariBUS=0x7f090088;
+        public static final int btnCariBUS=0x7f0900a2;
         public static final int buyButton=0x7f09000a;
         public static final int buy_now=0x7f09000f;
         public static final int buy_with_google=0x7f09000e;
         public static final int checkbox=0x7f09003f;
         public static final int classic=0x7f090011;
         public static final int collapseActionView=0x7f090020;
-        public static final int content_frame=0x7f09007d;
-        public static final int daftarAnakBUS=0x7f09008a;
+        public static final int content_frame=0x7f090082;
+        public static final int daftarAnakBUS=0x7f0900a4;
         public static final int default_activity_button=0x7f09003a;
         public static final int dialog=0x7f090021;
         public static final int disableHome=0x7f09001b;
-        public static final int drawer_layout=0x7f09007c;
+        public static final int donasiku_btncobalagi=0x7f09005e;
+        public static final int donasiku_lblTitle=0x7f090058;
+        public static final int donasiku_listDonasi=0x7f09005a;
+        public static final int donasiku_loading=0x7f09005b;
+        public static final int donasiku_mainwrapper=0x7f090056;
+        public static final int donasiku_offline=0x7f09005d;
+        public static final int donasiku_offlinenotif=0x7f09005c;
+        public static final int donasiku_relativelayout=0x7f090059;
+        public static final int donasiku_wrapper=0x7f090057;
+        public static final int drawer_layout=0x7f090081;
         public static final int dropdown=0x7f090022;
         public static final int edit_query=0x7f090042;
-        public static final int email=0x7f090078;
+        public static final int email=0x7f09007d;
         public static final int end=0x7f090025;
         public static final int expand_activities_button=0x7f090038;
         public static final int expanded_menu=0x7f09003e;
-        public static final int frag_home_kalkzakat=0x7f09008d;
-        public static final int frag_home_usertrans=0x7f09008e;
-        public static final int frag_home_viewkas=0x7f09008c;
-        public static final int frag_listbus_newbus=0x7f090089;
-        public static final int frag_profile_cont=0x7f0900a6;
-        public static final int frag_profile_viewmap=0x7f0900a8;
-        public static final int frag_txt_companyaddr=0x7f0900a7;
-        public static final int frag_txt_title=0x7f090077;
-        public static final int fragment_label=0x7f090083;
-        public static final int fragment_menu=0x7f090082;
-        public static final int frg_news_listv=0x7f0900a2;
-        public static final int frg_news_noconn_cnt=0x7f0900a4;
-        public static final int frg_news_tryagain=0x7f09006e;
+        public static final int frag_home_kalkzakat=0x7f0900b5;
+        public static final int frag_home_usertrans=0x7f0900b6;
+        public static final int frag_home_viewkas=0x7f0900b4;
+        public static final int frag_laporanKauangan_filter=0x7f0900ad;
+        public static final int frag_laporan_wrapper=0x7f0900b7;
+        public static final int frag_listbus_newbus=0x7f0900a3;
+        public static final int frag_profile_cont=0x7f0900d3;
+        public static final int frag_profile_viewmap=0x7f0900d5;
+        public static final int frag_txt_companyaddr=0x7f0900d4;
+        public static final int frag_txt_title=0x7f09007c;
+        public static final int fragment_label=0x7f090092;
+        public static final int fragment_menu=0x7f090090;
+        public static final int frg_dlgreport_bulan=0x7f0900ab;
+        public static final int frg_dlgreport_tahun=0x7f0900ac;
+        public static final int frg_news_listv=0x7f0900cd;
+        public static final int frg_news_noconn_cnt=0x7f0900cf;
+        public static final int frg_news_tryagain=0x7f0900d0;
+        public static final int frg_news_wrapper=0x7f0900cc;
         public static final int grayscale=0x7f090012;
         public static final int holo_dark=0x7f090005;
         public static final int holo_light=0x7f090006;
         public static final int home=0x7f090026;
         public static final int homeAsUp=0x7f090018;
+        public static final int home_bodycontainer=0x7f0900b0;
+        public static final int home_contentcontainer=0x7f0900af;
+        public static final int home_lblAppDesc=0x7f0900b2;
+        public static final int home_lblMainMenu=0x7f0900b3;
+        public static final int home_menu_logout=0x7f090119;
+        public static final int home_scrollview=0x7f0900ae;
         public static final int hybrid=0x7f090004;
         public static final int icon=0x7f09003c;
         public static final int ifRoom=0x7f09001d;
         public static final int image=0x7f090039;
-        public static final int imageView1=0x7f090051;
-        public static final int imageView2=0x7f09008b;
-        public static final int laporanKeuanganScroll=0x7f09008f;
-        public static final int layoutSearchBUS=0x7f090087;
+        public static final int imageView2=0x7f0900b1;
+        public static final int imgLogo=0x7f090086;
+        public static final int item_trx_desc=0x7f09008b;
+        public static final int item_trx_icon=0x7f090051;
+        public static final int item_trx_subtitle=0x7f09008c;
+        public static final int item_trx_title=0x7f09008a;
+        public static final int laporanKeuanganScroll=0x7f0900b8;
+        public static final int layoutSearchBUS=0x7f0900a0;
         public static final int lblAppVer=0x7f090052;
-        public static final int lblTitlePenerimaan=0x7f090091;
-        public static final int lblTitlePenerimaan1=0x7f090095;
-        public static final int lblTitlePengeluaran=0x7f09009a;
-        public static final int lblTotalPenerimaan=0x7f090097;
-        public static final int lblTotalPengeluaran=0x7f09009c;
-        public static final int lblTotalSaldo=0x7f09009f;
-        public static final int lblUserName=0x7f09007f;
-        public static final int left_drawer=0x7f09007e;
-        public static final int left_menu=0x7f090080;
-        public static final int linearLayoutListBUS=0x7f090086;
+        public static final int lblTitlePenerimaan1=0x7f0900bf;
+        public static final int lblTitlePengeluaran=0x7f0900c4;
+        public static final int lblTitleReport=0x7f0900bb;
+        public static final int lblTotalPenerimaan=0x7f0900c1;
+        public static final int lblTotalPengeluaran=0x7f0900c6;
+        public static final int lblTotalSaldo=0x7f0900c9;
+        public static final int lblUserName=0x7f090084;
+        public static final int left_drawer=0x7f090083;
+        public static final int left_menu=0x7f090085;
+        public static final int linearLayoutListBUS=0x7f09009f;
         public static final int listMode=0x7f090014;
         public static final int listViewPrestasiBUS=0x7f090054;
         public static final int list_item=0x7f09003b;
-        public static final int listitem_news_imgthumb=0x7f090076;
-        public static final int login=0x7f09007a;
-        public static final int login_form=0x7f090075;
-        public static final int login_status=0x7f090073;
-        public static final int login_status_message=0x7f090074;
+        public static final int listitem_news_imgthumb=0x7f09007b;
+        public static final int login=0x7f09007f;
+        public static final int login_action_row=0x7f0900a8;
+        public static final int login_btn_dismiss=0x7f0900aa;
+        public static final int login_btn_dologin=0x7f0900a9;
+        public static final int login_form=0x7f09007a;
+        public static final int login_lbldesc=0x7f0900a5;
+        public static final int login_password=0x7f0900a7;
+        public static final int login_status=0x7f090078;
+        public static final int login_status_message=0x7f090079;
+        public static final int login_username=0x7f0900a6;
         public static final int match_parent=0x7f09000c;
-        public static final int menu_forgot_password=0x7f0900ac;
-        public static final int menu_settings=0x7f0900ab;
+        public static final int menu_forgot_password=0x7f090117;
+        public static final int menu_settings=0x7f090116;
         public static final int middle=0x7f090024;
         public static final int monochrome=0x7f090013;
         public static final int never=0x7f09001c;
         public static final int none=0x7f090000;
         public static final int normal=0x7f090001;
-        public static final int pager=0x7f090071;
-        public static final int password=0x7f090079;
+        public static final int pager=0x7f090076;
+        public static final int password=0x7f09007e;
         public static final int production=0x7f090007;
+        public static final int profil_scrollview=0x7f0900d2;
+        public static final int profil_txtDescRekening=0x7f0900d7;
+        public static final int profil_txtTitleRegening=0x7f0900d6;
+        public static final int profil_wrapper=0x7f0900d1;
         public static final int profile_map=0x7f09004e;
-        public static final int progressBar=0x7f0900a3;
+        public static final int progressBar=0x7f0900ce;
         public static final int progress_circular=0x7f09002a;
         public static final int progress_horizontal=0x7f09002b;
         public static final int radio=0x7f090041;
@@ -1591,69 +1658,143 @@ containing a value of this type.
         public static final int search_plate=0x7f090048;
         public static final int search_src_text=0x7f090049;
         public static final int search_voice_btn=0x7f09004d;
-        public static final int section_label=0x7f0900a1;
+        public static final int section_label=0x7f0900cb;
         public static final int selectionDetails=0x7f09000b;
         public static final int shortcut=0x7f090040;
         public static final int showCustom=0x7f09001a;
         public static final int showHome=0x7f090017;
         public static final int showTitle=0x7f090019;
-        public static final int sign_in_button=0x7f09007b;
-        public static final int sizakat_daftarbus=0x7f090085;
-        public static final int sizakat_kalkzakat=0x7f090084;
+        public static final int sign_in_button=0x7f090080;
+        public static final int sizakat_btn_login=0x7f090099;
+        public static final int sizakat_cnt_loggedin=0x7f09009a;
+        public static final int sizakat_cnt_notloggedin=0x7f090097;
+        public static final int sizakat_daftarbus=0x7f09009d;
+        public static final int sizakat_donasiku=0x7f09009c;
+        public static final int sizakat_editprofilakun=0x7f09009e;
+        public static final int sizakat_generalmenu_container=0x7f090091;
+        public static final int sizakat_kalkzakat=0x7f090093;
+        public static final int sizakat_loginstat_in=0x7f09009b;
+        public static final int sizakat_loginstat_out=0x7f090098;
+        public static final int sizakat_opensizonline=0x7f090094;
+        public static final int sizakat_scrollcontainer=0x7f09008f;
+        public static final int sizakat_txt_logininfo=0x7f090095;
+        public static final int sizakat_usermenu_container=0x7f090096;
+        public static final int sizakat_wrapper=0x7f09008e;
+        public static final int splash_loadingContent=0x7f090087;
+        public static final int splash_progressBar=0x7f090088;
+        public static final int splash_txtLoading=0x7f090089;
         public static final int split_action_bar=0x7f090030;
         public static final int strict_sandbox=0x7f090009;
         public static final int submit_area=0x7f09004b;
         public static final int tabMode=0x7f090015;
-        public static final int tableRow0=0x7f090090;
-        public static final int tableRow1=0x7f090092;
-        public static final int tableRow2=0x7f090094;
-        public static final int tableRow3=0x7f090096;
-        public static final int tableRow4=0x7f090099;
-        public static final int tableRow5=0x7f09009b;
-        public static final int tableRow6=0x7f09009e;
+        public static final int tableRow0=0x7f0900ba;
+        public static final int tableRow1=0x7f0900bc;
+        public static final int tableRow2=0x7f0900be;
+        public static final int tableRow3=0x7f0900c0;
+        public static final int tableRow4=0x7f0900c3;
+        public static final int tableRow5=0x7f0900c5;
+        public static final int tableRow6=0x7f0900c8;
+        public static final int tableRowHead=0x7f0900b9;
         public static final int terrain=0x7f090003;
-        public static final int textView=0x7f090081;
-        public static final int textView1=0x7f0900a5;
-        public static final int textView4=0x7f090053;
+        public static final int textView=0x7f09008d;
         public static final int title=0x7f09003d;
         public static final int top_action_bar=0x7f090032;
-        public static final int txtKas=0x7f090093;
-        public static final int txtPenerimaan=0x7f090098;
-        public static final int txtPengeluaran=0x7f09009d;
-        public static final int txtPengeluaran1=0x7f0900a0;
-        public static final int txtViewJudul=0x7f0900a9;
-        public static final int txtViewSubJudul=0x7f0900aa;
+        public static final int txtKas=0x7f0900bd;
+        public static final int txtPenerimaan=0x7f0900c2;
+        public static final int txtPengeluaran=0x7f0900c7;
+        public static final int txtPengeluaran1=0x7f0900ca;
+        public static final int txtViewJudul=0x7f090114;
+        public static final int txtViewSubJudul=0x7f090115;
         public static final int up=0x7f090033;
         public static final int useLogo=0x7f090016;
         public static final int withText=0x7f09001f;
         public static final int wrap_content=0x7f09000d;
-        public static final int zakat_btn_updategold=0x7f09005a;
+        public static final int zakat_bodywrapper=0x7f090061;
+        public static final int zakat_boxNisab=0x7f090063;
+        public static final int zakat_boxZakatHarta=0x7f090068;
+        public static final int zakat_boxZakatProfesi=0x7f09006c;
+        public static final int zakat_boxZakatUsaha=0x7f090070;
+        public static final int zakat_btn_reset=0x7f090067;
+        public static final int zakat_btn_updategold=0x7f0900ef;
+        public static final int zakat_icoNisab=0x7f090065;
+        public static final int zakat_icoZakatHarta=0x7f09006a;
+        public static final int zakat_icoZakatProfesi=0x7f09006e;
+        public static final int zakat_icoZakatUsaha=0x7f090072;
         public static final int zakat_layout_layout1=0x7f090050;
-        public static final int zakat_lbl_item_a=0x7f09005e;
-        public static final int zakat_lbl_item_b=0x7f090060;
-        public static final int zakat_lbl_item_c=0x7f090062;
-        public static final int zakat_lbl_item_d=0x7f090064;
-        public static final int zakat_lbl_item_e=0x7f090066;
-        public static final int zakat_lbl_item_f=0x7f090068;
-        public static final int zakat_lbl_item_g=0x7f09006a;
-        public static final int zakat_lbl_item_h=0x7f09006c;
-        public static final int zakat_lbl_item_i=0x7f09006f;
-        public static final int zakat_lbl_nisab=0x7f090057;
-        public static final int zakat_lbl_nisabfinal=0x7f09005b;
-        public static final int zakat_txt_harta1tahun=0x7f09005d;
-        public static final int zakat_txt_lastupdate=0x7f090058;
-        public static final int zakat_txt_nisab=0x7f090056;
-        public static final int zakat_txtbox_a=0x7f09005f;
-        public static final int zakat_txtbox_b=0x7f090061;
-        public static final int zakat_txtbox_c=0x7f090063;
-        public static final int zakat_txtbox_d=0x7f090065;
-        public static final int zakat_txtbox_e=0x7f090067;
-        public static final int zakat_txtbox_f=0x7f090069;
-        public static final int zakat_txtbox_g=0x7f09006b;
-        public static final int zakat_txtbox_h=0x7f09006d;
-        public static final int zakat_txtbox_i=0x7f090070;
-        public static final int zakat_txtbox_nisab=0x7f090059;
-        public static final int zakat_txtbox_nisabfinal=0x7f09005c;
+        public static final int zakat_lblNisab=0x7f090064;
+        public static final int zakat_lblZakatHarta=0x7f090069;
+        public static final int zakat_lblZakatProfesi=0x7f09006d;
+        public static final int zakat_lblZakatUsaha=0x7f090071;
+        public static final int zakat_lbl_instruction=0x7f090062;
+        public static final int zakat_lbl_item_a=0x7f0900d9;
+        public static final int zakat_lbl_item_b=0x7f0900db;
+        public static final int zakat_lbl_item_c=0x7f0900dd;
+        public static final int zakat_lbl_item_d=0x7f0900df;
+        public static final int zakat_lbl_item_e=0x7f0900e1;
+        public static final int zakat_lbl_item_f=0x7f0900e3;
+        public static final int zakat_lbl_item_g=0x7f0900e5;
+        public static final int zakat_lbl_item_h=0x7f0900e7;
+        public static final int zakat_lbl_item_i=0x7f0900ea;
+        public static final int zakat_lbl_jmlzakat=0x7f090074;
+        public static final int zakat_lbl_nisab=0x7f0900ed;
+        public static final int zakat_lbl_nisabfinal=0x7f0900f0;
+        public static final int zakat_scrollwrapper=0x7f09005f;
+        public static final int zakat_txtNisab=0x7f090066;
+        public static final int zakat_txtZakatHarta=0x7f09006b;
+        public static final int zakat_txtZakatProfesi=0x7f09006f;
+        public static final int zakat_txtZakatUsaha=0x7f090073;
+        public static final int zakat_txt_harta1tahun=0x7f0900d8;
+        public static final int zakat_txt_jmlzakat=0x7f090075;
+        public static final int zakat_txt_lastupdate=0x7f0900ee;
+        public static final int zakat_txt_nisab=0x7f0900ec;
+        public static final int zakat_txtbox_a=0x7f0900da;
+        public static final int zakat_txtbox_b=0x7f0900dc;
+        public static final int zakat_txtbox_c=0x7f0900de;
+        public static final int zakat_txtbox_d=0x7f0900e0;
+        public static final int zakat_txtbox_e=0x7f0900e2;
+        public static final int zakat_txtbox_f=0x7f0900e4;
+        public static final int zakat_txtbox_g=0x7f0900e6;
+        public static final int zakat_txtbox_h=0x7f0900e8;
+        public static final int zakat_txtbox_i=0x7f0900eb;
+        public static final int zakat_txtbox_nisab=0x7f0900a1;
+        public static final int zakat_txtbox_nisabfinal=0x7f0900f1;
+        public static final int zakat_wrapper=0x7f090060;
+        public static final int zakat_zakatHarta_nisab=0x7f0900e9;
+        public static final int zakat_zakatProfesi_body=0x7f0900f5;
+        public static final int zakat_zakatProfesi_btn_ok=0x7f090102;
+        public static final int zakat_zakatProfesi_lbl_a=0x7f0900f6;
+        public static final int zakat_zakatProfesi_lbl_c=0x7f0900f9;
+        public static final int zakat_zakatProfesi_lbl_d=0x7f0900fb;
+        public static final int zakat_zakatProfesi_lbl_e=0x7f0900fd;
+        public static final int zakat_zakatProfesi_lbl_f=0x7f090053;
+        public static final int zakat_zakatProfesi_lbl_g=0x7f090100;
+        public static final int zakat_zakatProfesi_lbl_title=0x7f0900f4;
+        public static final int zakat_zakatProfesi_scrollwrap=0x7f0900f2;
+        public static final int zakat_zakatProfesi_txt_a=0x7f0900f7;
+        public static final int zakat_zakatProfesi_txt_b=0x7f0900f8;
+        public static final int zakat_zakatProfesi_txt_c=0x7f0900fa;
+        public static final int zakat_zakatProfesi_txt_d=0x7f0900fc;
+        public static final int zakat_zakatProfesi_txt_e=0x7f0900fe;
+        public static final int zakat_zakatProfesi_txt_f=0x7f0900ff;
+        public static final int zakat_zakatProfesi_txt_finalzakat=0x7f090101;
+        public static final int zakat_zakatProfesi_wrapper=0x7f0900f3;
+        public static final int zakat_zakatUsaha_body=0x7f090106;
+        public static final int zakat_zakatUsaha_btn_ok=0x7f090111;
+        public static final int zakat_zakatUsaha_lbl_a=0x7f090107;
+        public static final int zakat_zakatUsaha_lbl_b=0x7f090109;
+        public static final int zakat_zakatUsaha_lbl_c=0x7f09010b;
+        public static final int zakat_zakatUsaha_lbl_d=0x7f09010e;
+        public static final int zakat_zakatUsaha_lbl_g=0x7f090112;
+        public static final int zakat_zakatUsaha_lbl_komposisi=0x7f09010c;
+        public static final int zakat_zakatUsaha_lbl_title=0x7f090105;
+        public static final int zakat_zakatUsaha_nisab=0x7f090110;
+        public static final int zakat_zakatUsaha_scrollwrap=0x7f090103;
+        public static final int zakat_zakatUsaha_seek=0x7f09010d;
+        public static final int zakat_zakatUsaha_txt_a=0x7f090108;
+        public static final int zakat_zakatUsaha_txt_b=0x7f09010a;
+        public static final int zakat_zakatUsaha_txt_d=0x7f09010f;
+        public static final int zakat_zakatUsaha_txt_finalzakat=0x7f090113;
+        public static final int zakat_zakatUsaha_wrapper=0x7f090104;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1708,31 +1849,43 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_company_map=0x7f030018;
         public static final int activity_detil_anak_bus=0x7f030019;
-        public static final int activity_kalkulator_zakat=0x7f03001a;
-        public static final int activity_lazisba_home=0x7f03001b;
-        public static final int activity_list_peserta_bus=0x7f03001c;
-        public static final int activity_login=0x7f03001d;
-        public static final int activity_main=0x7f03001e;
-        public static final int drawer_listitem=0x7f03001f;
-        public static final int fragment_activity=0x7f030020;
-        public static final int fragment_daftaranakbus=0x7f030021;
-        public static final int fragment_home=0x7f030022;
-        public static final int fragment_laporankeuangan=0x7f030023;
-        public static final int fragment_lazisba_home=0x7f030024;
-        public static final int fragment_news=0x7f030025;
-        public static final int fragment_profile=0x7f030026;
-        public static final int listitem_anakbus=0x7f030027;
-        public static final int listitem_anakbus_select=0x7f030028;
-        public static final int listitem_berita=0x7f030029;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002a;
+        public static final int activity_donasiku=0x7f03001a;
+        public static final int activity_kalkulator_zakat=0x7f03001b;
+        public static final int activity_lazisba_home=0x7f03001c;
+        public static final int activity_list_peserta_bus=0x7f03001d;
+        public static final int activity_login=0x7f03001e;
+        public static final int activity_main=0x7f03001f;
+        public static final int activity_splash_screen=0x7f030020;
+        public static final int donasiku_transaction=0x7f030021;
+        public static final int drawer_listitem=0x7f030022;
+        public static final int fragment_activity=0x7f030023;
+        public static final int fragment_daftaranakbus=0x7f030024;
+        public static final int fragment_dlg_loginform=0x7f030025;
+        public static final int fragment_dlg_report_filter=0x7f030026;
+        public static final int fragment_home=0x7f030027;
+        public static final int fragment_laporankeuangan=0x7f030028;
+        public static final int fragment_lazisba_home=0x7f030029;
+        public static final int fragment_news=0x7f03002a;
+        public static final int fragment_profile=0x7f03002b;
+        public static final int kalkulator_zakat_harta=0x7f03002c;
+        public static final int kalkulator_zakat_nisab=0x7f03002d;
+        public static final int kalkulator_zakat_profesi=0x7f03002e;
+        public static final int kalkulator_zakat_usaha=0x7f03002f;
+        public static final int listitem_anakbus=0x7f030030;
+        public static final int listitem_anakbus_select=0x7f030031;
+        public static final int listitem_berita=0x7f030032;
+        public static final int support_simple_spinner_dropdown_item=0x7f030033;
     }
     public static final class menu {
         public static final int activity_detil_anak_bus=0x7f0e0000;
         public static final int activity_login=0x7f0e0001;
         public static final int company_name=0x7f0e0002;
-        public static final int kalkulator_zakat=0x7f0e0003;
-        public static final int lazisba_home=0x7f0e0004;
-        public static final int list_peserta_bus=0x7f0e0005;
+        public static final int donasiku=0x7f0e0003;
+        public static final int kalkulator_zakat=0x7f0e0004;
+        public static final int kalkulator_zakat_profesi=0x7f0e0005;
+        public static final int kalkulator_zakat_usaha=0x7f0e0006;
+        public static final int lazisba_home=0x7f0e0007;
+        public static final int list_peserta_bus=0x7f0e0008;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1776,12 +1929,20 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f080025;
         public static final int action_settings=0x7f08003f;
-        public static final int action_sign_in_register=0x7f080061;
-        public static final int action_sign_in_short=0x7f080062;
+        public static final int action_sign_in_register=0x7f080072;
+        public static final int action_sign_in_short=0x7f080073;
+        public static final int app_donasiku_title=0x7f080059;
         public static final int app_label_nama=0x7f080035;
+        public static final int app_laporankeuangan_filter=0x7f080053;
         public static final int app_lbl_prestasi=0x7f080038;
         public static final int app_lbl_ttl=0x7f080037;
         public static final int app_name=0x7f080027;
+        public static final int app_profil_rekening=0x7f080056;
+        public static final int app_sizakat_donasiku=0x7f080054;
+        public static final int app_sizakat_opensiz=0x7f080055;
+        public static final int app_splash_developer=0x7f08004f;
+        public static final int app_str_100percent=0x7f08005d;
+        public static final int app_str_cancel=0x7f080057;
         public static final int app_str_cari=0x7f080032;
         public static final int app_str_companyaddr=0x7f080041;
         public static final int app_str_detilBUS=0x7f080034;
@@ -1792,30 +1953,52 @@ containing a value of this type.
         public static final int app_str_kalkzakat=0x7f080048;
         public static final int app_str_kas=0x7f080030;
         public static final int app_str_listbus=0x7f08004a;
+        public static final int app_str_loading=0x7f080051;
         public static final int app_str_menusizakat=0x7f080049;
         public static final int app_str_newbus=0x7f08004e;
         public static final int app_str_noconnection=0x7f08004b;
         public static final int app_str_null=0x7f080046;
         public static final int app_str_numbnul_rp=0x7f080045;
         public static final int app_str_perh_nisab=0x7f080044;
+        public static final int app_str_show=0x7f080052;
         public static final int app_str_tryagain=0x7f08004c;
         public static final int app_str_updategold=0x7f080047;
         public static final int app_str_viewmap=0x7f080042;
+        public static final int app_str_zero=0x7f08005a;
         public static final int app_version=0x7f08003a;
-        public static final int app_zakat_hitungzakat1thn=0x7f080075;
-        public static final int app_zakat_int_goldinit=0x7f080076;
-        public static final int app_zakat_lbl_besarnisab=0x7f08006a;
-        public static final int app_zakat_lbl_hrgemas=0x7f080069;
-        public static final int app_zakat_lbl_item_a=0x7f08006c;
-        public static final int app_zakat_lbl_item_b=0x7f08006d;
-        public static final int app_zakat_lbl_item_c=0x7f08006e;
-        public static final int app_zakat_lbl_item_d=0x7f08006f;
-        public static final int app_zakat_lbl_item_e=0x7f080070;
-        public static final int app_zakat_lbl_item_f=0x7f080071;
-        public static final int app_zakat_lbl_item_g=0x7f080072;
-        public static final int app_zakat_lbl_item_h=0x7f080073;
-        public static final int app_zakat_lbl_item_i=0x7f080074;
-        public static final int app_zakat_txt_harta1tahun=0x7f08006b;
+        public static final int app_zakat_besarnisab=0x7f08009a;
+        public static final int app_zakat_harta_lbl=0x7f080097;
+        public static final int app_zakat_hitungzakat1thn=0x7f080086;
+        public static final int app_zakat_int_goldinit=0x7f080087;
+        public static final int app_zakat_lbl_besarnisab=0x7f08007b;
+        public static final int app_zakat_lbl_hrgemas=0x7f08007a;
+        public static final int app_zakat_lbl_item_a=0x7f08007d;
+        public static final int app_zakat_lbl_item_b=0x7f08007e;
+        public static final int app_zakat_lbl_item_c=0x7f08007f;
+        public static final int app_zakat_lbl_item_d=0x7f080080;
+        public static final int app_zakat_lbl_item_e=0x7f080081;
+        public static final int app_zakat_lbl_item_f=0x7f080082;
+        public static final int app_zakat_lbl_item_g=0x7f080083;
+        public static final int app_zakat_lbl_item_h=0x7f080084;
+        public static final int app_zakat_lbl_item_i=0x7f080085;
+        public static final int app_zakat_profesi_lbl=0x7f080098;
+        public static final int app_zakat_profesi_lbl_bonus=0x7f080089;
+        public static final int app_zakat_profesi_lbl_gaji=0x7f080088;
+        public static final int app_zakat_profesi_lbl_hasiltahun=0x7f08008a;
+        public static final int app_zakat_profesi_lbl_jmlzakat=0x7f08008f;
+        public static final int app_zakat_profesi_lbl_keluarbln=0x7f08008b;
+        public static final int app_zakat_profesi_lbl_keluarlain=0x7f08008c;
+        public static final int app_zakat_profesi_lbl_kenazakat=0x7f08008e;
+        public static final int app_zakat_profesi_lbl_title=0x7f080090;
+        public static final int app_zakat_profesi_lbl_totalkeluar=0x7f08008d;
+        public static final int app_zakat_txt_harta1tahun=0x7f08007c;
+        public static final int app_zakat_usaha_lbl=0x7f080099;
+        public static final int app_zakat_usaha_lbl_hutang=0x7f080092;
+        public static final int app_zakat_usaha_lbl_jmlzakat=0x7f080095;
+        public static final int app_zakat_usaha_lbl_kekayaan=0x7f080091;
+        public static final int app_zakat_usaha_lbl_kenazakat=0x7f080094;
+        public static final int app_zakat_usaha_lbl_komposisi=0x7f080093;
+        public static final int app_zakat_usaha_lbl_title=0x7f080096;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1907,48 +2090,54 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f080018;
         public static final int drawer_close=0x7f08002e;
         public static final int drawer_open=0x7f08002d;
-        public static final int error_field_required=0x7f080068;
-        public static final int error_incorrect_password=0x7f080067;
-        public static final int error_invalid_email=0x7f080065;
-        public static final int error_invalid_password=0x7f080066;
+        public static final int error_field_required=0x7f080079;
+        public static final int error_incorrect_password=0x7f080078;
+        public static final int error_invalid_email=0x7f080076;
+        public static final int error_invalid_password=0x7f080077;
         public static final int hello_world=0x7f080029;
         public static final int login=0x7f08002c;
-        public static final int login_progress_signing_in=0x7f080064;
-        public static final int menu_forgot_password=0x7f080063;
+        public static final int login_progress_signing_in=0x7f080075;
+        public static final int menu_forgot_password=0x7f080074;
         public static final int menu_settings=0x7f080028;
         public static final int password=0x7f08002b;
-        public static final int pref_default_display_name=0x7f080054;
-        public static final int pref_description_social_recommendations=0x7f080052;
+        public static final int pref_akun_password=0x7f08006e;
+        public static final int pref_akun_username=0x7f08006d;
+        public static final int pref_default_display_name=0x7f080063;
+        public static final int pref_description_social_recommendations=0x7f080061;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f080056;
+        public static final int pref_header_data_sync=0x7f080065;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f080050;
+        public static final int pref_header_general=0x7f08005f;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f080059;
-        public static final int pref_ringtone_silent=0x7f08005c;
-        public static final int pref_title_add_friends_to_messages=0x7f080055;
-        public static final int pref_title_display_name=0x7f080053;
-        public static final int pref_title_new_message_notifications=0x7f08005a;
-        public static final int pref_title_ringtone=0x7f08005b;
-        public static final int pref_title_social_recommendations=0x7f080051;
-        public static final int pref_title_sync_frequency=0x7f080057;
-        public static final int pref_title_system_sync_settings=0x7f080058;
-        public static final int pref_title_vibrate=0x7f08005d;
+        public static final int pref_header_notifications=0x7f080068;
+        public static final int pref_ringtone_silent=0x7f08006b;
+        public static final int pref_title_add_friends_to_messages=0x7f080064;
+        public static final int pref_title_display_name=0x7f080062;
+        public static final int pref_title_new_message_notifications=0x7f080069;
+        public static final int pref_title_ringtone=0x7f08006a;
+        public static final int pref_title_social_recommendations=0x7f080060;
+        public static final int pref_title_sync_frequency=0x7f080066;
+        public static final int pref_title_system_sync_settings=0x7f080067;
+        public static final int pref_title_vibrate=0x7f08006c;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f08005f;
-        public static final int prompt_password=0x7f080060;
-        public static final int title_activity_account_setting=0x7f08004f;
+        public static final int prompt_email=0x7f080070;
+        public static final int prompt_password=0x7f080071;
+        public static final int title_activity_account_setting=0x7f08005e;
         public static final int title_activity_company_name=0x7f080040;
         public static final int title_activity_detil_anak_bus=0x7f080033;
+        public static final int title_activity_donasiku=0x7f080058;
         public static final int title_activity_kalkulator_zakat=0x7f080043;
+        public static final int title_activity_kalkulator_zakat_profesi=0x7f08005b;
+        public static final int title_activity_kalkulator_zakat_usaha=0x7f08005c;
         public static final int title_activity_lazisba_home=0x7f08003b;
         public static final int title_activity_list_peserta_bus=0x7f08004d;
-        public static final int title_activity_login=0x7f08005e;
+        public static final int title_activity_login=0x7f08006f;
+        public static final int title_activity_splash_screen=0x7f080050;
         public static final int title_section1=0x7f08003c;
         public static final int title_section2=0x7f08003d;
         public static final int title_section3=0x7f08003e;
@@ -1963,16 +2152,19 @@ containing a value of this type.
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
 
+
         
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
+
     
  API 11 theme customizations can go here. 
 
@@ -1987,6 +2179,10 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060091;
+        public static final int ButtonBar=0x7f060096;
+        public static final int ButtonBarButton=0x7f060097;
+        public static final int FullscreenActionBarStyle=0x7f060098;
+        public static final int FullscreenTheme=0x7f060095;
         public static final int LoginFormContainer=0x7f060092;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
@@ -2201,6 +2397,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f06000e;
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f060027;
         public static final int siz_button_text=0x7f060093;
+        public static final int siz_menu_text=0x7f060094;
     }
     public static final class xml {
         public static final int pref_data_sync=0x7f050000;
@@ -2971,6 +3168,46 @@ containing a value of this type.
           @attr name org.lazisba.sizakat:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarButtonStyle org.lazisba.sizakat:metaButtonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarStyle org.lazisba.sizakat:metaButtonBarStyle}</code></td><td></td></tr>
+           </table>
+           @see #ButtonBarContainerTheme_metaButtonBarButtonStyle
+           @see #ButtonBarContainerTheme_metaButtonBarStyle
+         */
+        public static final int[] ButtonBarContainerTheme = {
+            0x7f01008e, 0x7f01008f
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.lazisba.sizakat.R.attr#metaButtonBarButtonStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.lazisba.sizakat:metaButtonBarButtonStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarButtonStyle = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.lazisba.sizakat.R.attr#metaButtonBarStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.lazisba.sizakat:metaButtonBarStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>

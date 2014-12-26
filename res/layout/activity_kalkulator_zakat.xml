@@ -1,252 +1,229 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/act_kalkzakat_scrvw"
+    android:id="@+id/zakat_scrollwrapper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-     >
+    android:layout_height="match_parent" >
 
     <LinearLayout
-        android:id="@+id/zakat_layout_layout1"
+        android:id="@+id/zakat_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="org.lazisba.sizakat.KalkulatorZakat"
-        android:focusableInTouchMode="true" >
+        tools:context="org.lazisba.sizakat.KalkulatorZakat" >
 
         <TextView
-            android:id="@+id/zakat_txt_nisab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/app_color_sectheader"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:gravity="center_vertical"
-            android:nextFocusLeft="@id/zakat_txt_nisab"
-            android:nextFocusUp="@id/zakat_txt_nisab"
-            android:padding="@dimen/app_dimen_padding"
-            android:text="@string/app_str_perh_nisab"
+            android:drawableLeft="@drawable/icon_calculator_32"
+            android:drawablePadding="5dp"
+            android:gravity="fill_vertical"
+            android:padding="10dp"
+            android:text="@string/app_str_kalkzakat"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/zakat_lbl_nisab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/app_dimen_padding"
-            android:paddingTop="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_hrgemas"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/zakat_txt_lastupdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_str_null"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <EditText
-            android:id="@+id/zakat_txtbox_nisab"
+        <LinearLayout
+            android:id="@+id/zakat_bodywrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="@string/app_zakat_int_goldinit" >
+            android:orientation="vertical"
+            android:padding="10dp" >
 
-        </EditText>
+            <TextView
+                android:id="@+id/zakat_lbl_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:text="Fasilitas ini memudahkan Anda untuk menghitung total zakat yang harus Anda bayarkan."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <Button
-            android:id="@+id/zakat_btn_updategold"
-            style="@style/siz_button_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/app_dimen_padding"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:layout_marginRight="@dimen/app_dimen_padding"
-            android:background="@drawable/siz_button_style"
-            android:text="@string/app_str_updategold" />
+            <RelativeLayout
+                android:id="@+id/zakat_boxNisab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/siz_menu_style"
+                android:clickable="true"
+                android:padding="10dp" >
 
-        <TextView
-            android:id="@+id/zakat_lbl_nisabfinal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_besarnisab"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/zakat_lblNisab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/zakat_icoNisab"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/zakat_icoNisab"
+                    android:text="@string/app_zakat_besarnisab"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_nisabfinal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
+                <ImageView
+                    android:id="@+id/zakat_icoNisab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_gold_32" />
 
-        <!-- ZAKAT HARTA YANG TERSIMPAN SELAMA SATU TAHUN... -->
+                <TextView
+                    android:id="@+id/zakat_txtNisab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/zakat_lblNisab"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/zakat_lblNisab"
+                    android:text="@string/app_str_numbnul_rp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+            
+            <Button
+                android:id="@+id/zakat_btn_reset"
+                style="@style/siz_button_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/siz_button_style"
+                android:text="Reset"
+                android:visibility="gone" />
 
-        <TextView
-            android:id="@+id/zakat_txt_harta1tahun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/app_dimen_padding"
-            android:background="@color/app_color_sectheader"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:padding="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_txt_harta1tahun"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_a"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            <RelativeLayout
+                android:id="@+id/zakat_boxZakatHarta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/siz_menu_style"
+                android:clickable="true"
+                android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/zakat_txtbox_a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_b"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/zakat_lblZakatHarta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/zakat_icoZakatHarta"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/zakat_icoZakatHarta"
+                    android:text="@string/app_zakat_harta_lbl"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_b"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_c"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ImageView
+                    android:id="@+id/zakat_icoZakatHarta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_report_32" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_c"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_d"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_d"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/zakat_txtZakatHarta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/zakat_lblZakatHarta"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/zakat_lblZakatHarta"
+                    android:text="@string/app_str_numbnul_rp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/zakat_boxZakatProfesi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/siz_menu_style"
+                android:clickable="true"
+                android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/zakat_txtbox_d"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_e"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_e"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/zakat_lblZakatProfesi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/zakat_icoZakatProfesi"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/zakat_icoZakatProfesi"
+                    android:text="@string/app_zakat_profesi_lbl"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_e"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_f"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_f"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ImageView
+                    android:id="@+id/zakat_icoZakatProfesi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_report_32" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_f"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_g"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_g"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/zakat_txtZakatProfesi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/zakat_lblZakatProfesi"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/zakat_lblZakatProfesi"
+                    android:text="@string/app_str_numbnul_rp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
 
-        <EditText
-            android:id="@+id/zakat_txtbox_g"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_h"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            <RelativeLayout
+                android:id="@+id/zakat_boxZakatUsaha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/siz_menu_style"
+                android:clickable="true"
+                android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/zakat_txtbox_h"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
+                <TextView
+                    android:id="@+id/zakat_lblZakatUsaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/zakat_icoZakatUsaha"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/zakat_icoZakatUsaha"
+                    android:text="@string/app_zakat_usaha_lbl"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Button
-            android:id="@+id/frg_news_tryagain"
-            style="@style/siz_button_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:background="@drawable/siz_button_style"
-            android:text="@string/app_zakat_hitungzakat1thn" />
-        
-        <TextView
-            android:id="@+id/zakat_lbl_item_i"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
-            android:text="@string/app_zakat_lbl_item_i"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+                <ImageView
+                    android:id="@+id/zakat_icoZakatUsaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_report_32" />
 
-        <EditText
-            android:id="@+id/zakat_txtbox_i"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/app_dimen_padding"
-            android:ems="10"
-            android:inputType="numberDecimal" />
+                <TextView
+                    android:id="@+id/zakat_txtZakatUsaha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/zakat_lblZakatUsaha"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/zakat_lblZakatUsaha"
+                    android:text="@string/app_str_numbnul_rp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+            
+            <TextView
+                android:id="@+id/zakat_lbl_jmlzakat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Total zakat yang harus dibayar:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/zakat_txt_jmlzakat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/app_str_numbnul_rp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

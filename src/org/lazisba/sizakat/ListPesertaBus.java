@@ -15,11 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ListPesertaBus extends ActionBarActivity {
 
+	private static ArrayList<RowItem> anakBus;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class ListPesertaBus extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.act_listbus_container, new PlaceholderFragment()).commit();
 		}
+		
+		anakBus = this.getIntent().getParcelableArrayListExtra("LAZISBA_LIST_BUS");
 	}
 
 	@Override
@@ -54,7 +58,7 @@ public class ListPesertaBus extends ActionBarActivity {
 	 */
 	public static class PlaceholderFragment extends Fragment {
 
-		 public static final String[] titles = new String[] { "Ahmad Toyyib",
+		public static final String[] titles = new String[] { "Ahmad Toyyib",
 	            "Arifian", "Wahyu", "Wahyuni" };
 	 
         public static final String[] descriptions = new String[] {
@@ -72,23 +76,32 @@ public class ListPesertaBus extends ActionBarActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
+			
+			
 			View rootView = inflater.inflate(
 					R.layout.fragment_daftaranakbus, container, false);
 			ListView listView;
             List<RowItem> rowItems;
             
-        	rowItems = new ArrayList<RowItem>();
-            for (int i1 = 0; i1 < titles.length; i1++) {
-                RowItem item = new RowItem(images[i1], titles[i1], descriptions[i1]);
-                rowItems.add(item);
-            }
+        	//rowItems = new ArrayList<RowItem>();
+           // for (int i1 = 0; i1 < titles.length; i1++) {
+            //    RowItem item = new RowItem(images[i1], titles[i1], descriptions[i1]);
+            //    rowItems.add(item);
+            //}
             
             listView = (ListView) rootView.findViewById(R.id.daftarAnakBUS);
             CustomListViewAdapter adapter = new CustomListViewAdapter(this.getActivity(),
-                    R.layout.listitem_anakbus, rowItems);
+                    R.layout.listitem_anakbus, anakBus);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new BUSONItemClickListener());
             
+            final Button button = (Button) rootView.findViewById(R.id.frag_listbus_newbus);
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), ListPilihPesertaBus.class);
+    				startActivity(intent);
+                }
+            });
 			return rootView;
 		}
 		

@@ -1,12 +1,14 @@
 package org.lazisba.sizakat;
 
+import java.util.Date;
+
 public class RssItem {
 
 	private final String title;
     private final String link;
-    private final String date_;
+    private final Date date_;
     
-    public RssItem(String title, String link, String tanggal) {
+    public RssItem(String title, String link, Date tanggal) {
         this.title = title;
         this.link = link;
         this.date_ = tanggal;
@@ -20,7 +22,7 @@ public class RssItem {
         return link;
     }
 
-	public String getDate() {
+	public Date getDate() {
 		return date_;
 	}
 

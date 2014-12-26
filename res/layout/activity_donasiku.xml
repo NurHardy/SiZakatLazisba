@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/donasiku_mainwrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/donasiku_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/siz_shadow_container"
+        android:orientation="vertical"
+        android:padding="3dp"
+        tools:context="org.lazisba.sizakat.Donasiku" >
+
+        <TextView
+            android:id="@+id/donasiku_lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_drawer_color"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="@string/app_donasiku_title"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse" />
+
+        <RelativeLayout
+            android:id="@+id/donasiku_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ListView
+                android:id="@+id/donasiku_listDonasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:visibility="gone" >
+
+            </ListView>
+
+            <ProgressBar
+                android:id="@+id/donasiku_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <LinearLayout
+                android:id="@+id/donasiku_offlinenotif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="44dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/donasiku_offline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/icon_warn_32"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/app_str_noconnection"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/donasiku_btncobalagi"
+                    style="@style/siz_button_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/siz_button_style"
+                    android:text="@string/app_str_tryagain" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

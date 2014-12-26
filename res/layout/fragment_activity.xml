@@ -1,38 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_menu"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sizakat_wrapper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ffffff"
-    >
+    android:background="@color/app_bg_color"
+    android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/fragment_label"
+    <ScrollView
+        android:id="@+id/sizakat_scrollcontainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/app_str_menusizakat"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/siz_shadow_container"
+        android:padding="3dp" >
 
-    <Button
-        android:id="@+id/sizakat_kalkzakat"
-        style="@style/siz_button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_dimen_padding"
-        android:background="@drawable/siz_button_style"
-        android:text="@string/app_str_kalkzakat" />
+        <RelativeLayout
+            android:id="@+id/fragment_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/sizakat_daftarbus"
-        style="@style/siz_button_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_dimen_padding"
-        android:background="@drawable/siz_button_style"
-        android:text="@string/app_str_listbus" />
+            <LinearLayout
+                android:id="@+id/sizakat_generalmenu_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/fragment_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/app_str_menusizakat"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/sizakat_kalkzakat"
+                    style="@style/siz_menu_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/siz_menu_style"
+                    android:drawableLeft="@drawable/icon_calculator_32"
+                    android:drawablePadding="5dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/app_str_kalkzakat" />
+
+                <Button
+                    android:id="@+id/sizakat_opensizonline"
+                    style="@style/siz_button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/app_dimen_padding"
+                    android:background="@drawable/siz_button_style"
+                    android:text="@string/app_sizakat_opensiz" />
+
+                <TextView
+                    android:id="@+id/sizakat_txt_logininfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/app_dimen_padding"
+                    android:text="Akun Lazisba:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <LinearLayout
+                    android:id="@+id/sizakat_usermenu_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/sizakat_cnt_notloggedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/sizakat_loginstat_out"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_warn_16"
+                            android:drawablePadding="5dp"
+                            android:padding="10dp"
+                            android:text="Belum Login" />
+
+                        <Button
+                            android:id="@+id/sizakat_btn_login"
+                            style="@style/siz_button_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_button_style"
+                            android:drawableLeft="@drawable/icon_lock"
+                            android:drawablePadding="5dp"
+                            android:gravity="center|left"
+                            android:text="@string/login"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sizakat_cnt_loggedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/sizakat_loginstat_in"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_check_16"
+                            android:drawablePadding="5dp"
+                            android:padding="10dp"
+                            android:text="Login sebagai..." />
+
+                        <Button
+                            android:id="@+id/sizakat_donasiku"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_report_32"
+                            android:drawablePadding="5dp"
+                            android:text="@string/app_sizakat_donasiku" />
+
+                        <Button
+                            android:id="@+id/sizakat_daftarbus"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_account_32"
+                            android:drawablePadding="5dp"
+                            android:text="@string/app_str_listbus" />
+
+                        <Button
+                            android:id="@+id/sizakat_editprofilakun"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_info_32"
+                            android:drawablePadding="5dp"
+                            android:text="Edit Profil Saya"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

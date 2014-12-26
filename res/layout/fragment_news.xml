@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frg_news_wrapper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@color/app_bg_color"
+    android:padding="10dp" >
 
-    <ListView
-        android:id="@+id/frg_news_listv"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:visibility="gone" >
-    </ListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        <ListView
+            android:id="@+id/frg_news_listv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/siz_shadow_container"
+            android:visibility="gone" >
 
-    <LinearLayout
-        android:id="@+id/frg_news_noconn_cnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:visibility="gone" >
+        </ListView>
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/app_str_noconnection"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_centerInParent="true" />
 
-        <Button
-            android:id="@+id/frg_news_tryagain"
-            style="@style/siz_button_text"
-            android:layout_width="157dp"
+        <LinearLayout
+            android:id="@+id/frg_news_noconn_cnt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/siz_button_style"
-            android:padding="10dp"
-            android:text="@string/app_str_tryagain" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:visibility="gone" >
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/splash_txtLoading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/app_str_noconnection"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/frg_news_tryagain"
+                style="@style/siz_button_text"
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/siz_button_style"
+                android:padding="10dp"
+                android:text="@string/app_str_tryagain" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_zakat_lbl_hrgemas">Z. Harga emas murni:</string>
+    <string name="app_zakat_lbl_hrgemas">Harga emas murni (per gram):</string>
     <string name="app_zakat_lbl_besarnisab">Besarnya Nisab (z x 85 gram emas)</string>
     <string name="app_zakat_txt_harta1tahun">Zakat Harta yang Tersimpan selama Satu Tahun</string>
-    <string name="app_zakat_lbl_item_a">A. Uang Tunai, Tabungan, Deposito atau sejenisnya:</string>
-    <string name="app_zakat_lbl_item_b">B. Saham atau surat-surat berharga lainnya:</string>
-    <string name="app_zakat_lbl_item_c">C. Real Estate (tidak termasuk rumah tinggal yang dipakai sekarang):</string>
-    <string name="app_zakat_lbl_item_d">D. Emas, Perak, Permata atau sejenisnya:</string>
-    <string name="app_zakat_lbl_item_e">E. Mobil (lebih dari keperluan pekerjaan anggota keluarga):</string>
-    <string name="app_zakat_lbl_item_f">F. Jumlah Harta Simpanan (A+B+C+D+E):</string>
-    <string name="app_zakat_lbl_item_g">G. Hutang Pribadi yg jatuh tempo dalam tahun ini:</string>
-    <string name="app_zakat_lbl_item_h">H. Harta simpanan kena zakat(F-G, jika > nisab):</string>
+    <string name="app_zakat_lbl_item_a">Uang Tunai, Tabungan, Deposito atau sejenisnya:</string>
+    <string name="app_zakat_lbl_item_b">Saham atau surat-surat berharga lainnya:</string>
+    <string name="app_zakat_lbl_item_c">Real Estate (tidak termasuk rumah tinggal yang dipakai sekarang):</string>
+    <string name="app_zakat_lbl_item_d">Emas, Perak, Permata atau sejenisnya:</string>
+    <string name="app_zakat_lbl_item_e">Mobil (lebih dari keperluan pekerjaan anggota keluarga):</string>
+    <string name="app_zakat_lbl_item_f">Jumlah Harta Simpanan:</string>
+    <string name="app_zakat_lbl_item_g">Hutang Pribadi yg jatuh tempo dalam tahun ini:</string>
+    <string name="app_zakat_lbl_item_h">Harta simpanan kena zakat(jika > nisab):</string>
     <string name="app_zakat_lbl_item_i">JUMLAH ZAKAT ATAS SIMPANAN YANG WAJIB DIBAYARKAN PER TAHUN (2,5% x H):</string>
     <string name="app_zakat_hitungzakat1thn">Hitung Zakat</string>
     <string name="app_zakat_int_goldinit">450000</string>
+    <string name="app_zakat_profesi_lbl_gaji">Pendapatan/Gaji per Bulan (setelah dipotong pajak)</string>
+    <string name="app_zakat_profesi_lbl_bonus">Bonus/pendapatan lain-lain selama setahun</string>
+    <string name="app_zakat_profesi_lbl_hasiltahun">Jumlah Pendapatan per Tahun</string>
+    <string name="app_zakat_profesi_lbl_keluarbln"> Rata-rata pengeluaran rutin per bulan (kebutuhan fisik, air, listrik, pendidikan, kesehatan, transportasi, dll)</string>
+    <string name="app_zakat_profesi_lbl_keluarlain">Pengeluaran lainnya dalam satu tahun (pendidikan, kesehatan, dll)</string>
+    <string name="app_zakat_profesi_lbl_totalkeluar">Jumlah Pengeluaran per Tahun</string>
+    <string name="app_zakat_profesi_lbl_kenazakat">Penghasilan kena zakat</string>
+    <string name="app_zakat_profesi_lbl_jmlzakat">JUMLAH ZAKAT PROFESI YANG WAJIB DIBAYARKAN PER TAHUN</string>
+    <string name="app_zakat_profesi_lbl_title">Kalkulator Zakat Profesi</string>
+    <string name="app_zakat_usaha_lbl_kekayaan">Nilai Kekayaan Perusahaan (termasuk uang tunai, simpanan di bank, real estate, alat produksi, inventori, barang jadi, dll)</string>
+    <string name="app_zakat_usaha_lbl_hutang">Utang perusahaan jatuh tempo</string>
+    <string name="app_zakat_usaha_lbl_komposisi">Komposisi Kepemilikan</string>
+    <string name="app_zakat_usaha_lbl_kenazakat">Harta usaha kena zakat</string>
+    <string name="app_zakat_usaha_lbl_jmlzakat">JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN</string>
+    <string name="app_zakat_usaha_lbl_title">Kalkulator Zakat Harta Usaha</string>
+    <string name="app_zakat_harta_lbl">Zakat Harta Tersimpan</string>
+    <string name="app_zakat_profesi_lbl">Zakat Profesi</string>
+    <string name="app_zakat_usaha_lbl">Zakat Harta Usaha</string>
+    <string name="app_zakat_besarnisab">Besar Nisab</string>
     
-    
-    
-     
 </resources>
