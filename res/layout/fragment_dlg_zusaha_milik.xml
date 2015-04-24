@@ -4,22 +4,23 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:padding="3dp" >
+    android:padding="10dp" >
 
-    <Spinner
-        android:id="@+id/frg_dlgreport_bulan"
+    <TextView
+        android:id="@+id/frg_zusaha_txtpersen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:background="@drawable/siz_menu_style"
-        android:padding="12dp" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/app_str_100percent"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Spinner
-        android:id="@+id/frg_dlgreport_tahun"
+    <SeekBar
+        android:id="@+id/frg_zusaha_seekmilik"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:background="@drawable/siz_menu_style"
-        android:padding="12dp" />
+        android:max="100"
+        android:progress="100" />
 
 </LinearLayout>

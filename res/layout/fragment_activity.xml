@@ -30,7 +30,10 @@
                     android:id="@+id/fragment_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:drawableLeft="@drawable/ic_launcher_new"
+                    android:drawablePadding="10dp"
+                    android:gravity="left"
                     android:padding="10dp"
                     android:text="@string/app_str_menusizakat"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -81,23 +84,25 @@
                             style="@style/siz_menu_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/siz_menu_style"
-                            android:drawableLeft="@drawable/icon_warn_16"
                             android:drawablePadding="5dp"
+                            android:drawableTop="@drawable/icon_warn_16"
+                            android:gravity="center"
                             android:padding="10dp"
                             android:text="Belum Login" />
 
                         <Button
                             android:id="@+id/sizakat_btn_login"
                             style="@style/siz_button_text"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:background="@drawable/siz_button_style"
                             android:drawableLeft="@drawable/icon_lock"
                             android:drawablePadding="5dp"
                             android:gravity="center|left"
                             android:text="@string/login"
                             android:textSize="12sp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -112,7 +117,6 @@
                             style="@style/siz_menu_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/siz_menu_style"
                             android:drawableLeft="@drawable/icon_check_16"
                             android:drawablePadding="5dp"
                             android:padding="10dp"
@@ -127,6 +131,15 @@
                             android:drawableLeft="@drawable/icon_report_32"
                             android:drawablePadding="5dp"
                             android:text="@string/app_sizakat_donasiku" />
+
+                        <Button
+                            android:id="@+id/sizakat_profilku"
+                            style="@style/siz_menu_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/siz_menu_style"
+                            android:drawableLeft="@drawable/icon_account_32"
+                            android:text="@string/app_str_myprofile" />
 
                         <Button
                             android:id="@+id/sizakat_daftarbus"

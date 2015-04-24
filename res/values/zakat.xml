@@ -21,17 +21,18 @@
     <string name="app_zakat_profesi_lbl_keluarlain">Pengeluaran lainnya dalam satu tahun (pendidikan, kesehatan, dll)</string>
     <string name="app_zakat_profesi_lbl_totalkeluar">Jumlah Pengeluaran per Tahun</string>
     <string name="app_zakat_profesi_lbl_kenazakat">Penghasilan kena zakat</string>
-    <string name="app_zakat_profesi_lbl_jmlzakat">JUMLAH ZAKAT PROFESI YANG WAJIB DIBAYARKAN PER TAHUN</string>
+    <string name="app_zakat_profesi_lbl_jmlzakat">JUMLAH ZAKAT PROFESI YANG WAJIB DIBAYARKAN PER TAHUN:</string>
     <string name="app_zakat_profesi_lbl_title">Kalkulator Zakat Profesi</string>
     <string name="app_zakat_usaha_lbl_kekayaan">Nilai Kekayaan Perusahaan (termasuk uang tunai, simpanan di bank, real estate, alat produksi, inventori, barang jadi, dll)</string>
     <string name="app_zakat_usaha_lbl_hutang">Utang perusahaan jatuh tempo</string>
     <string name="app_zakat_usaha_lbl_komposisi">Komposisi Kepemilikan</string>
     <string name="app_zakat_usaha_lbl_kenazakat">Harta usaha kena zakat</string>
-    <string name="app_zakat_usaha_lbl_jmlzakat">JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN</string>
+    <string name="app_zakat_usaha_lbl_jmlzakat">JUMLAH ZAKAT ATAS HARTA USAHA YANG WAJIB DIBAYARKAN PER TAHUN:</string>
     <string name="app_zakat_usaha_lbl_title">Kalkulator Zakat Harta Usaha</string>
     <string name="app_zakat_harta_lbl">Zakat Harta Tersimpan</string>
     <string name="app_zakat_profesi_lbl">Zakat Profesi</string>
     <string name="app_zakat_usaha_lbl">Zakat Harta Usaha</string>
     <string name="app_zakat_besarnisab">Besar Nisab</string>
+    <string name="app_zakat_reset">Reset</string>
     
 </resources>

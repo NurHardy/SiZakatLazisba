@@ -132,11 +132,19 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/zakat_zakatProfesi_besarnisab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/app_str_null"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
                 android:id="@+id/zakat_zakatProfesi_lbl_g"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="@string/app_zakat_lbl_item_i"
+                android:text="@string/app_zakat_profesi_lbl_jmlzakat"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -155,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/siz_button_style"
-                android:text="Button" />
+                android:text="@string/app_zakat_hitungzakat1thn" />
         </LinearLayout>
     </LinearLayout>
 

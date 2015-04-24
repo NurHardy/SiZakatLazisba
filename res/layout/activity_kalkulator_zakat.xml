@@ -8,6 +8,7 @@
         android:id="@+id/zakat_wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#ffffff"
         android:orientation="vertical"
         tools:context="org.lazisba.sizakat.KalkulatorZakat" >
 
@@ -77,7 +78,7 @@
                     android:text="@string/app_str_numbnul_rp"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
-            
+
             <Button
                 android:id="@+id/zakat_btn_reset"
                 style="@style/siz_button_text"
@@ -126,7 +127,7 @@
                     android:text="@string/app_str_numbnul_rp"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/zakat_boxZakatProfesi"
                 android:layout_width="match_parent"
@@ -205,23 +206,36 @@
                     android:text="@string/app_str_numbnul_rp"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </RelativeLayout>
-            
-            <TextView
-                android:id="@+id/zakat_lbl_jmlzakat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Total zakat yang harus dibayar:"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <TextView
-                android:id="@+id/zakat_txt_jmlzakat"
+            <RelativeLayout
+                android:id="@+id/zakat_boxZakatTotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/app_str_numbnul_rp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textStyle="bold" />
+                android:layout_marginTop="3dp"
+                android:background="@drawable/siz_menu_style_light"
+                android:clickable="true"
+                android:longClickable="false"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/zakat_lbl_jmlzakat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Total zakat yang harus dibayar:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/zakat_txt_jmlzakat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/zakat_lbl_jmlzakat"
+                    android:padding="5dp"
+                    android:text="@string/app_str_numbnul_rp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>

@@ -2,15 +2,12 @@ package org.lazisba.sizakat;
 
 import java.util.List;
 
-import org.lazisba.sizakat.LazisbaHome.PlaceholderFragment;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

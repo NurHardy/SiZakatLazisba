@@ -1,18 +1,12 @@
 package org.lazisba.sizakat;
 
-import java.util.ArrayList;
+import java.util.Calendar;
 
-import org.apache.http.Header;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.lazisba.sizakat.dialogs.Login_DlgLogin;
 import org.lazisba.sizakat.dialogs.Report_DlgMonth;
+import org.lazisba.sizakat.fragments.FragmentLaporanKeuangan;
+import org.lazisba.sizakat.fragments.FragmentSiZakat;
 import org.lazisba.sizakat.util.SiZakatGlobal;
-
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -21,10 +15,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.app.ProgressDialog;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -33,15 +28,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class LazisbaHome extends ActionBarActivity implements
-		ActionBar.TabListener, Report_DlgMonth.OnCompleteListener,
-		Login_DlgLogin.OnCompleteListener {
+		ActionBar.TabListener, Login_DlgLogin.OnCompleteListener {
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -58,8 +49,18 @@ public class LazisbaHome extends ActionBarActivity implements
 	ViewPager mViewPager;
 	private static View viewLaporan;
 	private static View viewHome;
+	
+	private static LayoutInflater layoutInfaterLaporan;
+	
+	private Context parentCtx;
+	private Menu mainMenu;
+	
+	private int currentMonth, currentYear;
+	
 	private static boolean loginShown = false;
 
+	public final static String ID_ARG_CURRENTMONTH = "currentMonth";
+	public final static String ID_ARG_CURRENTYEAR = "currentYear";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -119,12 +120,25 @@ public class LazisbaHome extends ActionBarActivity implements
 				.setIcon(R.drawable.tab_ico_about)
 				.setTabListener(this));
 		
+		Calendar c = Calendar.getInstance();
+		currentYear = c.get(Calendar.YEAR);
+		currentMonth = c.get(Calendar.MONTH)+1;
+		
+		if (currentMonth == 1) {
+			currentYear--; currentMonth = 12;
+		}
+		parentCtx = this;	
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		this.mainMenu = menu;
 		getMenuInflater().inflate(R.menu.lazisba_home, menu);
+		if (!((SiZakatApp) this.getApplication()).loginState.isLoggedIn()) {
+			MenuItem item = menu.findItem(R.id.home_menu_logout);
+			item.setVisible(false);
+		}
 		return true;
 	}
 
@@ -139,13 +153,53 @@ public class LazisbaHome extends ActionBarActivity implements
 			startActivity(intent);
 			return true;
 		} else if (id == R.id.home_menu_logout) {
-			((SiZakatApp) this.getApplication()).loginState.destroySession();
+			new AlertDialog.Builder(this)
+	        .setTitle("Konfirmasi")
+	        .setMessage("Disconnect akun?")
+	        .setNegativeButton(android.R.string.no, null)
+	        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+	        	@Override
+	            public void onClick(DialogInterface arg0, int arg1) {
+	        		((SiZakatApp) LazisbaHome.this.getApplication()).loginState.destroySession();
+	        		
+	        		SharedPreferences settings = LazisbaHome.this.getSharedPreferences(SiZakatGlobal.PREFS_NAME, 0);
+         	        SharedPreferences.Editor editor = settings.edit();
+         	        editor.remove(SiZakatGlobal.PREFS_UTOKEN);
+         	        editor.remove(SiZakatGlobal.PREFS_UFULLNAME);
+         	        editor.remove(SiZakatGlobal.PREFS_UID);
+         	        editor.remove(SiZakatGlobal.PREFS_ULEVEL);
+         	        editor.commit();
+         	        
+         	        LazisbaHome.this.updateLoginStatus();
+	        	}
+	        }).create().show();
+			
 			
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void updateLoginStatus() {
+		/*FragmentSiZakat fragment =
+    			(FragmentSiZakat) this.getSupportFragmentManager().findFragmentById(3131);
+    	if (fragment != null)
+    		fragment.updateLoginStatus();*/
+    	
+		Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + mViewPager.getCurrentItem());
+	    // based on the current position you can then cast the page to the correct 
+	    // class and call the method:
+	    if (page != null) {
+	         ((FragmentSiZakat)page).updateLoginStatus();   
+	    } 
+	    
+    	MenuItem item = this.mainMenu.findItem(R.id.home_menu_logout);
+    	if (!((SiZakatApp) this.getApplication()).loginState.isLoggedIn()) {
+			item.setVisible(false);
+		} else {
+			item.setVisible(true);
+		}
+	}
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
@@ -187,6 +241,14 @@ public class LazisbaHome extends ActionBarActivity implements
 				Log.d(getPackageName(), "Position = 1!");
 				RssFragment fragment = new RssFragment();
                 return fragment;
+			} else if (position == 2) {
+				FragmentLaporanKeuangan fragment =
+						new FragmentLaporanKeuangan(currentMonth, currentYear);
+				
+				return fragment;
+			} else if (position == 3) {
+				FragmentSiZakat fragment = new FragmentSiZakat();
+				return fragment;
 			} else return PlaceholderFragment.newInstance(position + 1);
 			//return PlaceholderFragment.newInstance(position + 1);
 		}
@@ -281,9 +343,9 @@ public class LazisbaHome extends ActionBarActivity implements
         		
             // =========== TAB LAPORAN KEUANGAN
             } else if (i==3) {
+            	layoutInfaterLaporan = inflater;
             	rootView = inflater.inflate(R.layout.fragment_laporankeuangan, container, false);
-            	
-            	final Button btnFilter = (Button) rootView.findViewById(R.id.frag_laporanKauangan_filter);
+            	final TextView btnFilter = (TextView) rootView.findViewById(R.id.lblTitleReport);
             	btnFilter.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                     	FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -295,6 +357,10 @@ public class LazisbaHome extends ActionBarActivity implements
 
         			    // Create and show the dialog.
         			    DialogFragment newFragment = new Report_DlgMonth();
+        			    Bundle bundle = new Bundle();
+        			    bundle.putInt(LazisbaHome.ID_ARG_CURRENTMONTH, 4);
+        			    bundle.putInt(LazisbaHome.ID_ARG_CURRENTYEAR, 2015);
+        			    newFragment.setArguments(bundle);
         			    newFragment.show(ft, "dialog");
         			    
                     }
@@ -317,126 +383,7 @@ public class LazisbaHome extends ActionBarActivity implements
 
             // =========== TAB SIZAKAT
             } else if (i==4) {
-            	rootView = inflater.inflate(R.layout.fragment_activity, container, false);
-            	//((TextView) rootView.findViewById(R.id.fragment_label)).setText("Menu #"+i+" aktif!");
             	
-            	if (((SiZakatApp) PlaceholderFragment.this.getActivity().getApplication()).loginState.isLoggedIn()) {
-            		final ViewGroup sizLogin = (ViewGroup) rootView.findViewById(R.id.sizakat_cnt_loggedin);
-            		final ViewGroup sizLogoff = (ViewGroup) rootView.findViewById(R.id.sizakat_cnt_notloggedin);
-            		
-            		sizLogin.setVisibility(View.VISIBLE);
-            		sizLogoff.setVisibility(View.GONE);
-            		((TextView) rootView.findViewById(R.id.sizakat_txt_logininfo))
-            			.setText("Login sebagai "+
-            				((SiZakatApp) PlaceholderFragment.this.getActivity().getApplication()).loginState.getFullname());
-            	}
-            	Log.d("Tab Sizakat: ", "OnCreateView");
-            	final Button buttonKalk = (Button) rootView.findViewById(R.id.sizakat_kalkzakat);
-            	buttonKalk.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                    	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), KalkulatorZakat.class);
-        				startActivity(intent);
-                    }
-                });
-            	final Button buttonViewSIZ = (Button) rootView.findViewById(R.id.sizakat_opensizonline);
-            	buttonViewSIZ.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                    	Uri uri = Uri.parse("http://siz.lazisba.org/login.php");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
-                    }
-                });
-            	final Button buttonLogin = (Button) rootView.findViewById(R.id.sizakat_btn_login);
-            	buttonLogin.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                    	FragmentTransaction ft = getFragmentManager().beginTransaction();
-                	    Fragment prev = getFragmentManager().findFragmentByTag("sizakat_login");
-                	    if (prev != null) {
-                	        ft.remove(prev);
-                	    }
-                	    ft.addToBackStack(null);
-
-                	    // Create and show the dialog.
-                	    DialogFragment newFragment = new Login_DlgLogin();
-                	    newFragment.show(ft, "sizakat_login");
-                    }
-                });
-            	final Button btnDonasiku = (Button) rootView.findViewById(R.id.sizakat_donasiku);
-            	btnDonasiku.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                    	Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), Donasiku.class);
-        				startActivity(intent);
-                    }
-                });
-            	final Button buttonListBus = (Button) rootView.findViewById(R.id.sizakat_daftarbus);
-            	buttonListBus.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                    	final Context parentCtx = PlaceholderFragment.this.getActivity();
-                    	// ======= Set up progress bar
-                    	final ProgressDialog prgDialog;
-                    	prgDialog = new ProgressDialog(parentCtx);
-                        prgDialog.setMessage("Memuat data...");
-                        prgDialog.setCancelable(false);
-                        
-                    	// Put Http parameter username with value of Email Edit View control
-                        RequestParams params = new RequestParams();
-                        params.put("apiKey", SiZakatGlobal.APP_APIKEY);
-            	        params.put("appVer", SiZakatGlobal.APP_VERSION);
-            	        params.put(SiZakatGlobal.PREFS_UTOKEN,
-            	        		((SiZakatApp) PlaceholderFragment.this.getActivity().getApplication()).loginState.getToken());
-            	        params.put(SiZakatGlobal.PREFS_UID,
-            	        		((SiZakatApp) PlaceholderFragment.this.getActivity().getApplication()).loginState.getUid());
-                        
-                        prgDialog.show();
-                        // Make RESTful webservice call using AsyncHttpClient object
-                        AsyncHttpClient client = new AsyncHttpClient();
-                        client.get(SiZakatGlobal.getRESTUrl("peserta_bus"),params ,new AsyncHttpResponseHandler() {
-                            
-                            @Override
-                            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-                                // Hide Progress Dialog
-                                prgDialog.hide();
-                                Toast.makeText(parentCtx, "Unexpected Error occcured! [Most common Error: Device might not be connected to Internet or remote server is not up and running]", Toast.LENGTH_LONG).show();
-                            }
-               			@Override
-               			// When the response returned by REST has Http response code '200'
-               			public void onSuccess(int statusCode, Header[] headers, byte[] response) {
-               				// TODO Auto-generated method stub
-               				prgDialog.hide();
-                               try {
-                               		String strJSON = new String(response);
-                                        // JSON Object
-                                   JSONObject obj = new JSONObject(strJSON);
-                                   // When the JSON response has status boolean value assigned with true
-                                   if(!obj.has("error")){
-                                	   ArrayList<RowItem> daftarAnak = new ArrayList<RowItem>();
-                                	   JSONArray jsonArrayAnak = obj.getJSONArray("data");
-                                	   
-                                	   int counter;
-                                	   for (counter=0; counter < jsonArrayAnak.length(); counter++) {
-                                		   JSONObject anak = jsonArrayAnak.getJSONObject(counter);
-                                		   daftarAnak.add(new RowItem(1, anak.getString("nama"), anak.getString("sekolah")));
-                                	   }
-                                	   
-                                       //Toast.makeText(parentCtx, obj.getString("result"), Toast.LENGTH_LONG).show();
-                                       Intent intent = new Intent(PlaceholderFragment.this.getActivity().getBaseContext(), ListPesertaBus.class);
-                                       intent.putParcelableArrayListExtra("LAZISBA_LIST_BUS", daftarAnak);
-                                       startActivity(intent);
-                                   }
-                                   // Else display error message
-                                   else{
-                                       //errorMsg.setText(obj.getString("error_msg"));
-                                       Toast.makeText(parentCtx, obj.getString("error"), Toast.LENGTH_LONG).show();
-                                   }
-                               } catch (JSONException e) {
-                                   // TODO Auto-generated catch block
-                                   Toast.makeText(parentCtx, "Error Occured [Server's JSON response might be invalid]!", Toast.LENGTH_LONG).show();
-                                   e.printStackTrace();
-                               }
-               			}
-                        }); // end get
-                    } // end onClick
-                });
             }
             
             return rootView;
@@ -450,71 +397,12 @@ public class LazisbaHome extends ActionBarActivity implements
 	// Oncomplete untuk login
 	@Override
 	public void onCompleteLogin(int status) {
-		// TODO Auto-generated method stub
-		
+		updateLoginStatus();
 	}
 	
-	// Oncomplete untuk laporan keuangan
-	@Override
-	public void onComplete(int sM, int sY) {
-		// TODO Auto-generated method stub
-		final Context parentCtx = this;
-    	// ======= Set up progress bar
-    	final ProgressDialog prgDialog;
-    	prgDialog = new ProgressDialog(parentCtx);
-        prgDialog.setMessage("Memuat data laporan...");
-        prgDialog.setCancelable(false);
-        
-    	// Put Http parameter username with value of Email Edit View control
-        RequestParams params = new RequestParams();
-        params.put("apiKey", "informatikaundip");
-        params.put("report_month", sM);
-        params.put("report_year", sY);
-        
-        prgDialog.show();
-        // Make RESTful webservice call using AsyncHttpClient object
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(SiZakatGlobal.getRESTUrl("laporan_bulan"),params ,new AsyncHttpResponseHandler() {
-            
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-                // Hide Progress Dialog
-                prgDialog.hide();
-                Toast.makeText(parentCtx, "Terjadi kesalahan... Silakan coba lagi.", Toast.LENGTH_LONG).show();
-            }
-		@Override
-		// When the response returned by REST has Http response code '200'
-		public void onSuccess(int statusCode, Header[] headers, byte[] response) {
-			// TODO Auto-generated method stub
-			prgDialog.hide();
-			String strJSON = new String(response);
-			Log.v("LaporanBulan: JSON", strJSON);
-			try {
-			   // JSON Object
-			   JSONObject obj = new JSONObject(strJSON);
-			   // When the JSON response has status boolean value assigned with true
-			   if(!obj.has("error")){
-				   ((TextView) viewLaporan.findViewById(R.id.lblTitleReport)).setText(obj.getString("label"));
-				   JSONObject reportBody = obj.getJSONObject("data");
-				   JSONObject reportPemasukan = reportBody.getJSONObject("pemasukan");
-				   JSONObject reportPenyaluran = reportBody.getJSONObject("penyaluran");
-				   
-				   ((TextView) viewLaporan.findViewById(R.id.txtKas)).setText(reportBody.getString("kas"));
-				   ((TextView) viewLaporan.findViewById(R.id.txtPenerimaan)).setText(reportPemasukan.getString("total"));
-				   ((TextView) viewLaporan.findViewById(R.id.txtPengeluaran)).setText(reportPenyaluran.getString("total"));
-				   ((TextView) viewLaporan.findViewById(R.id.txtPengeluaran1)).setText(reportBody.getString("saldo"));
-			   }
-			   // Else display error message
-			   else{
-				       //errorMsg.setText(obj.getString("error_msg"));
-				   Toast.makeText(parentCtx, obj.getString("error"), Toast.LENGTH_LONG).show();
-			   }
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-			   Toast.makeText(parentCtx, "Respons error... Silakan coba lagi.", Toast.LENGTH_LONG).show();
-			   e.printStackTrace();
-			}
-		}
-        }); // end get
+	public void changeCurrentReportTime(int cMonth, int cYear) {
+		this.currentMonth = cMonth;
+		this.currentYear = cYear;
 	}
+	
 } // end class LazisbaHome

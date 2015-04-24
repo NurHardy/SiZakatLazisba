@@ -1,19 +1,14 @@
 package org.lazisba.sizakat;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.lazisba.sizakat.adapters.DonasikuTransactionAdapter;
 import org.lazisba.sizakat.dialogs.Login_DlgLogin;
 import org.lazisba.sizakat.util.SiZakatGlobal;
-import org.lazisba.sizakat.util.TransactionItem;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -57,12 +52,15 @@ public class SplashScreen extends FragmentActivity implements Login_DlgLogin.OnC
             	SharedPreferences settings = getSharedPreferences(SiZakatGlobal.PREFS_NAME, 0);
             	if (settings.contains(SiZakatGlobal.PREFS_UTOKEN) &&
             			settings.contains(SiZakatGlobal.PREFS_UID) &&
-            			settings.contains(SiZakatGlobal.PREFS_UFULLNAME)) {
+            			settings.contains(SiZakatGlobal.PREFS_UFULLNAME) &&
+            			settings.contains(SiZakatGlobal.PREFS_ULEVEL)) {
             		
             		String userToken = settings.getString(SiZakatGlobal.PREFS_UTOKEN, "token");
             		String userFullname = settings.getString(SiZakatGlobal.PREFS_UFULLNAME, "Unnamed");
                     int userId = settings.getInt(SiZakatGlobal.PREFS_UID, 0);
-                    ((SiZakatApp) SplashScreen.this.getApplication()).loginState.saveSession(userId, userToken, userFullname);
+                    int userLevel = settings.getInt(SiZakatGlobal.PREFS_ULEVEL, 0);
+                    ((SiZakatApp) SplashScreen.this.getApplication()).
+                    	loginState.saveSession(userId, userToken, userFullname, userLevel);
                     
                     Log.d("Auth","Pref found! : "+userToken+"|"+userFullname);
                     //Toast.makeText(SplashScreen.this, userToken, Toast.LENGTH_LONG).show();
@@ -121,7 +119,7 @@ public class SplashScreen extends FragmentActivity implements Login_DlgLogin.OnC
             
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-            	Toast.makeText(SplashScreen.this, "Autentifikasi gagal.", Toast.LENGTH_LONG).show();
+            	Toast.makeText(SplashScreen.this, "Autentikasi gagal.", Toast.LENGTH_LONG).show();
             	((SiZakatApp) SplashScreen.this.getApplication()).loginState.destroySession();
                 finishSplashScreen();
             }

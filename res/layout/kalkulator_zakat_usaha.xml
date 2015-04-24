@@ -8,6 +8,7 @@
         android:id="@+id/zakat_zakatUsaha_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:orientation="vertical"
         tools:context="org.lazisba.sizakat.KalkulatorZakatProfesi" >
 
@@ -43,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:inputType="number" >
+                android:inputType="number"
+                android:maxLength="15" >
 
                 <requestFocus />
             </EditText>
@@ -62,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="15" />
 
             <TextView
                 android:id="@+id/zakat_zakatUsaha_lbl_c"
@@ -72,22 +75,32 @@
                 android:text="@string/app_zakat_usaha_lbl_komposisi"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <TextView
-                android:id="@+id/zakat_zakatUsaha_lbl_komposisi"
+            <LinearLayout
+                android:id="@+id/zakat_zakatUsaha_btnKepemilikan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="5dp"
-                android:text="@string/app_str_100percent"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:background="@drawable/siz_menu_style_light"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:padding="5dp" >
 
-            <SeekBar
-                android:id="@+id/zakat_zakatUsaha_seek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:max="100"
-                android:progress="100" />
+                <TextView
+                    android:id="@+id/zakat_zakatUsaha_lbl_komposisi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/app_str_100percent"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ProgressBar
+                    android:id="@+id/zakat_zakatUsaha_seek"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:max="100"
+                    android:progress="100" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/zakat_zakatUsaha_lbl_d"
@@ -128,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="@string/app_zakat_lbl_item_i"
+                android:text="@string/app_zakat_usaha_lbl_jmlzakat"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView

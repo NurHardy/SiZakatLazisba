@@ -69,8 +69,14 @@
     <string name="title_activity_donasiku">Laporan Donasiku</string>
     <string name="app_donasiku_title">Laporan Donasiku</string>
     <string name="app_str_zero">0</string>
+    <string name="title_activity_kalkulator_zakat_harta">Zakat Harta Tersimpan</string>
     <string name="title_activity_kalkulator_zakat_profesi">Zakat Profesi</string>
-    <string name="title_activity_kalkulator_zakat_usaha">Kalkulator Zakat Usaha</string>
+    <string name="title_activity_kalkulator_zakat_usaha">Zakat Usaha</string>
     <string name="app_str_100percent">100%</string>
+    <string name="app_str_calculate">Hitung</string>
+    <string name="app_str_moredetail">Lebih Detail...</string>
+    <string name="app_str_nodonation">Anda belum melakukan transaksi apapun</string>
+    <string name="app_str_myprofile">Profilku</string>
+    
 
 </resources>

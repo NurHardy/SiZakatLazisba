@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.lazisba.sizakat.adapters.DonasikuTransactionAdapter;
-import org.lazisba.sizakat.dialogs.Login_DlgLogin;
 import org.lazisba.sizakat.util.SiZakatGlobal;
 import org.lazisba.sizakat.util.TransactionItem;
 
@@ -16,26 +15,21 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import android.support.v7.app.ActionBarActivity;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Donasiku extends ActionBarActivity {
 
 	private View progressView;
 	private View offlineNotif;
+	private View noDataNotif;
+	
 	private TextView connStatus;
 	private ListView listDonasi;
 	
@@ -47,6 +41,8 @@ public class Donasiku extends ActionBarActivity {
 		setContentView(R.layout.activity_donasiku);
 		
 		offlineNotif  = (ViewGroup) findViewById(R.id.donasiku_offlinenotif);
+		noDataNotif	  = (ViewGroup) findViewById(R.id.donasiku_nodatanotif);
+		
 		progressView = findViewById(R.id.donasiku_loading);
 		connStatus = (TextView) findViewById(R.id.donasiku_offline);
 		listDonasi = (ListView) findViewById(R.id.donasiku_listDonasi);
@@ -86,6 +82,7 @@ public class Donasiku extends ActionBarActivity {
 	}
 	// =================== LOAD DATA FUNCTION ====
 	private void loadData() {
+		noDataNotif.setVisibility(View.GONE);
 		if (((SiZakatApp) this.getApplication()).loginState.isLoggedIn()) {
 			// Show loading...
 			listDonasi.setVisibility(View.GONE);
@@ -121,20 +118,26 @@ public class Donasiku extends ActionBarActivity {
 	                   // When the JSON response has status boolean value assigned with true
 	                   if(!obj.has("error")){
 	                	   JSONArray userTrx = obj.getJSONArray("data");
-	                	   int i;
-	                	   for (i=0; i< userTrx.length(); i++) {
-	                		   JSONObject trxItem = (JSONObject) userTrx.get(i);
-	                		   listDonasiku.add(new TransactionItem(
-	                				   trxItem.getString("jenis"),
-	                				   trxItem.getString("nominal"),
-	                				   trxItem.getString("tanggal")));
-	                		   
-	                		   DonasikuTransactionAdapter adapter =
-	                				   new DonasikuTransactionAdapter(Donasiku.this, listDonasiku);
-	                		   listDonasi.setAdapter(adapter);
+	                	   if (userTrx.length() > 0) {
+	                		   int i;
+		                	   for (i=0; i< userTrx.length(); i++) {
+		                		   JSONObject trxItem = (JSONObject) userTrx.get(i);
+		                		   listDonasiku.add(new TransactionItem(
+		                				   trxItem.getString("jenis"),
+		                				   trxItem.getString("nominal"),
+		                				   trxItem.getString("tanggal")));
+		                		   
+		                		   DonasikuTransactionAdapter adapter =
+		                				   new DonasikuTransactionAdapter(Donasiku.this, listDonasiku);
+		                		   listDonasi.setAdapter(adapter);
+		                	   }
+		                	   
+		            	       showList();
+	                	   } else {
+	                		   showList();
+	                		   noDataNotif.setVisibility(View.VISIBLE);
 	                	   }
 	                	   
-	            	       showList();
 	                   }
 	                   // Else display error message
 	                   else{

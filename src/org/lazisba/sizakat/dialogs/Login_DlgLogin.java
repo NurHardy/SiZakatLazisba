@@ -147,8 +147,7 @@ public class Login_DlgLogin extends DialogFragment {
 				String strJSON = new String(response);
 				Log.v("DlgLogin", strJSON);
 				try {
-               		
-                        // JSON Object
+                   // JSON Object
                    JSONObject obj = new JSONObject(strJSON);
                    // When the JSON response has status boolean value assigned with true
                    if(!obj.has("error")){
@@ -159,16 +158,18 @@ public class Login_DlgLogin extends DialogFragment {
                 	   
                 	   String uToken	= userData.getString("user_token");
                 	   String uFullname	= userData.getString("user_fullname");
-                	   int uId		= userData.getInt("user_id");
+                	   int uId			= userData.getInt("user_id");
+                	   int uLevel		= userData.getInt("user_level");
                 	   ((SiZakatApp) Login_DlgLogin.this.getActivity().getApplication()).
-                	   		loginState.saveSession(uId, uToken, uFullname);
+                	   		loginState.saveSession(uId, uToken, uFullname, uLevel);
                 	   
                 	   SharedPreferences settings = Login_DlgLogin.this.getActivity().getSharedPreferences(SiZakatGlobal.PREFS_NAME, 0);
             	       SharedPreferences.Editor editor = settings.edit();
             	       editor.putString(SiZakatGlobal.PREFS_UTOKEN, uToken);
             	       editor.putString(SiZakatGlobal.PREFS_UFULLNAME, uFullname);
             	       editor.putInt(SiZakatGlobal.PREFS_UID, uId);
-
+            	       editor.putInt(SiZakatGlobal.PREFS_ULEVEL, uLevel);
+            	       
             	       // Commit the edits!
             	       editor.commit();
                 	      

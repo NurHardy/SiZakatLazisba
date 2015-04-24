@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_profilku">Profil Saya</string>
+    <string name="app_str_profile_fullname">Nama Lengkap *</string>
+    <string name="app_str_profile_email">Email *</string>
+    <string name="app_str_profile_birthplace">Tempat Lahir *</string>
+    <string name="app_str_profile_birthday">Tanggal Lahir *</string>
+    <string name="app_str_profile_hintdate">DD/MM/YYYY</string>
+    <string name="app_str_profile_city">Kota *</string>
+    <string name="app_str_profile_address">Alamat *</string>
+    <string name="app_str_profile_contact">Kontak *</string>
+    <string name="app_str_profile_job">Pekerjaan</string>
+    <string name="app_str_profile_wage">Penghasilan</string>
+    <string name="app_str_profile_company">Perusahaan</string>
+    <string name="app_str_profile_submit">Perbaharui Profil</string>
+</resources>

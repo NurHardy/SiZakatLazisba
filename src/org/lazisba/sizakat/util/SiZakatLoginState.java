@@ -17,15 +17,16 @@ public class SiZakatLoginState {
 		return ((uToken != null) && (uId != 0));
 	}
 	
-	public void saveSession(int newUId, String newUToken, String userFullname) {
-		uId = newUId; uToken = newUToken; uFullname = userFullname;
+	public void saveSession(int newUId, String newUToken, String userFullname, int userLevel) {
+		uId = newUId; uToken = newUToken; uFullname = userFullname; uLevel = userLevel;
 	}
 	
 	public void destroySession() {
-		uId = 0; uToken = null;
+		uId = 0; uToken = null; uLevel = 0; uFullname = null;
 	}
 	
 	public int getUid() {return uId;}
 	public String getToken() {return uToken;}
 	public String getFullname() {return uFullname;}
+	public int getUserLevel() {return this.uLevel;}
 }

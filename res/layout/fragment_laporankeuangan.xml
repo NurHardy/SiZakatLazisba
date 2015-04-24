@@ -6,46 +6,25 @@
     android:layout_column="2"
     android:layout_gravity="left|top"
     android:layout_row="0"
-    android:background="@color/app_bg_color"
-    android:padding="10dp" >
+    android:background="@color/app_bg_color" >
 
     <ScrollView
         android:id="@+id/laporanKeuanganScroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/siz_shadow_container"
-        android:padding="3dp" >
+        android:layout_height="match_parent" >
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TableRow
-                android:id="@+id/tableRowHead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="fill"
-                android:gravity="center|fill"
-                android:padding="5dp"
-                android:paddingBottom="15dp" >
-
-                <Button
-                    android:id="@+id/frag_laporanKauangan_filter"
-                    style="@style/siz_button_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_span="3"
-                    android:layout_weight="1"
-                    android:background="@drawable/siz_button_style"
-                    android:text="@string/app_laporankeuangan_filter" />
-
-            </TableRow>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@drawable/siz_shadow_container"
+            android:padding="10dp" >
 
             <TableRow
                 android:id="@+id/tableRow0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:paddingBottom="15dp" >
 
                 <TextView
@@ -54,13 +33,16 @@
                     android:layout_height="wrap_content"
                     android:layout_span="3"
                     android:layout_weight="1"
-                    android:background="#eee"
-                    android:gravity="center"
+                    android:background="@drawable/siz_menu_style"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/icon_report_32"
+                    android:drawablePadding="10dp"
                     android:padding="10dp"
-                    android:text="April 2014"
+                    android:text="April 2015"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textSize="24sp"
                     android:textStyle="normal" />
+
             </TableRow>
 
             <TableRow
@@ -82,9 +64,12 @@
                     android:id="@+id/txtKas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right"
                     android:layout_weight="1"
+                    android:gravity="right"
                     android:text="@string/app_str_dummyval"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
+
             </TableRow>
 
             <TableRow
@@ -104,10 +89,29 @@
                     android:text="Penerimaan"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#fff"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="normal" />
             </TableRow>
 
+            <TableRow
+                android:id="@+id/tableRowDetilPenerimaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:paddingBottom="15dp" >
+
+                <LinearLayout
+                    android:layout_span="3"
+                    android:layout_weight="1"
+                    android:id="@+id/laporanKeuanganListDetilPenerimaan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                </LinearLayout>
+               
+            </TableRow>
+            
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
@@ -128,8 +132,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="right"
                     android:text="Rp. 0"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
+
             </TableRow>
 
             <TableRow
@@ -148,10 +155,27 @@
                     android:text="Pengeluaran"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#fff"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="normal" />
             </TableRow>
 
+            <TableRow
+                android:id="@+id/tableRowDetilPengeluaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:paddingBottom="15dp" >
+
+                <LinearLayout
+                    android:layout_span="3"
+                    android:layout_weight="1"
+                    android:id="@+id/laporanKeuanganListDetilPengeluaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                </LinearLayout>
+            </TableRow>
             <TableRow
                 android:id="@+id/tableRow5"
                 android:layout_width="wrap_content"
@@ -172,8 +196,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="right"
                     android:text="Rp. 0"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
+
             </TableRow>
 
             <TableRow
@@ -197,10 +224,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="right"
                     android:text="@string/app_str_dummyval"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
+
             </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|fill"
+                android:paddingTop="15dp" >
+
+                <Button
+                    android:id="@+id/frag_laporanKauangan_filter"
+                    style="@style/siz_button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="3"
+                    android:layout_weight="1"
+                    android:background="@drawable/siz_button_style"
+                    android:text="@string/app_str_moredetail"
+                    android:visibility="gone" />
+
+            </TableRow>
+
         </TableLayout>
     </ScrollView>
 

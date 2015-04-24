@@ -4,9 +4,9 @@
     tools:context="org.lazisba.sizakat.KalkulatorZakat" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_kalkulatorzakat_reset"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/app_zakat_reset"
         app:showAsAction="never"/>
 
 </menu>

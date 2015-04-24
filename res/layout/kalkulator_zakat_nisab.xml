@@ -29,9 +29,10 @@
 
         <TextView
             android:id="@+id/zakat_lbl_nisab"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/app_dimen_padding"
+            android:paddingRight="@dimen/app_dimen_padding"
             android:paddingTop="@dimen/app_dimen_padding"
             android:text="@string/app_zakat_lbl_hrgemas"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -39,11 +40,12 @@
 
         <TextView
             android:id="@+id/zakat_txt_lastupdate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/app_dimen_padding"
             android:text="@string/app_str_null"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/zakat_txtbox_nisab"
@@ -70,9 +72,9 @@
 
         <TextView
             android:id="@+id/zakat_lbl_nisabfinal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/app_dimen_padding"
+            android:padding="10dp"
             android:text="@string/app_zakat_lbl_besarnisab"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
